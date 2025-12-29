@@ -1,7 +1,19 @@
+import 'package:burikaigi2026_slide/slides/flutter_demo_slide.dart';
+import 'package:burikaigi2026_slide/slides/flutter_history_slide.dart';
+import 'package:burikaigi2026_slide/slides/flutter_multiplatform_slide.dart';
+import 'package:burikaigi2026_slide/slides/flutter_web_ready_slide.dart';
 import 'package:burikaigi2026_slide/slides/title_main_slide.dart';
 import 'package:burikaigi2026_slide/slides/title_sub_slide.dart';
 import 'package:burikaigi2026_slide/slides/title_wasm_slide.dart';
 import 'package:burikaigi2026_slide/slides/toc_slide.dart';
+import 'package:burikaigi2026_slide/slides/ui_equals_f_state_slide.dart';
+import 'package:burikaigi2026_slide/slides/wasm_build_slide.dart';
+import 'package:burikaigi2026_slide/slides/wasm_rendering_slide.dart';
+import 'package:burikaigi2026_slide/slides/wasm_section_slide.dart';
+import 'package:burikaigi2026_slide/slides/webcomponents_embed_slide.dart';
+import 'package:burikaigi2026_slide/slides/webcomponents_section_slide.dart';
+import 'package:burikaigi2026_slide/slides/what_is_flutter_slide.dart';
+import 'package:burikaigi2026_slide/slides/why_webcomponents_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_deck/flutter_deck.dart';
@@ -43,9 +55,19 @@ void main() {
     ),
     slides: const [
       TitleMainSlide(),
-      TitleSubSlide(),
-      TitleWasmSlide(),
       TocSlide(),
+      FlutterMultiplatformSlide(),
+      WhatIsFlutterSlide(),
+      UiEqualsFStateSlide(),
+      FlutterDemoSlide(),
+      FlutterHistorySlide(),
+      FlutterWebReadySlide(),
+      WebComponentsSectionSlide(),
+      WhyWebComponentsSlide(),
+      WebComponentsEmbedSlide(),
+      WasmSectionSlide(),
+      WasmRenderingSlide(),
+      WasmBuildSlide(),
     ],
   ));
 }
