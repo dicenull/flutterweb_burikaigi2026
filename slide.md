@@ -15,19 +15,25 @@ backgroundColor: #EEEEEE
 
 <!-- _class: lead -->
 
-# 1. Flutterの話
+# 1. Flutter マルチプラットフォーム
 
 ---
 
-## Flutterとは？
+## Flutterとは
 
 - **Google製のUIフレームワーク**
 - **言語:** Dart
 - **特徴:** マルチプラットフォーム対応
   - 1つのプロジェクトでiOS / Android / Web / Desktopに対応
-- **UIの仕組み:** 全てが **Widget**
-  - プラットフォームごとの差分を意識せず、一貫したUIを構築可能
-  - ロジックもパッケージ（pub.dev）で共通化
+- **UIの仕組み:** すべてが **Widget**
+  - プラットフォームごとのUI差分なし
+  - パッケージ（pub.dev）が複数のプラットフォームをサポート
+
+---
+
+<!-- _class: lead -->
+
+# UI = f(state)
 
 ---
 
@@ -38,14 +44,19 @@ backgroundColor: #EEEEEE
   - `Scaffold` > `AppBar` / `Center` > `Column` > `Text`
 - ボタンを押すと `setState()` で画面が更新される仕組みを体感
 
+<!-- Flutter Webで作って、左コード、右プレビューで表示する -->
+
 ---
 
-## Flutterの歴史（タイムライン）
+## Flutterの歴史
 
 - **2018年:** Dart 2.0 / Flutter 1.0 リリース（モバイル中心）
-- **2021年:** Flutter 2.0 で **Web版がStable** に
-- **2022年:** Flutter 3.0 で **Desktop版がStable** に
-- 現在では、ほぼ全ての主要プラットフォームをカバーする成熟したフレームワークへ進化
+- **2021年:** Flutter 2.0 **Web Stable**
+- **2022年:** Flutter 3.0 **Desktop Stable**
+
+2026年現在、主要プラットフォームをカバー
+
+---
 
 ---
 
