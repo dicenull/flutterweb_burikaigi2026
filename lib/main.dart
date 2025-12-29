@@ -1,6 +1,11 @@
+import 'package:burikaigi2026_slide/slides/title_main_slide.dart';
+import 'package:burikaigi2026_slide/slides/title_sub_slide.dart';
+import 'package:burikaigi2026_slide/slides/title_wasm_slide.dart';
+import 'package:burikaigi2026_slide/slides/toc_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_deck/flutter_deck.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(FlutterDeckApp(
@@ -11,6 +16,7 @@ void main() {
           seedColor: const Color(0xFF042b59),
         ),
         useMaterial3: true,
+        textTheme: GoogleFonts.ibmPlexSansJpTextTheme(),
       ),
     ),
     configuration: FlutterDeckConfiguration(
@@ -35,55 +41,11 @@ void main() {
         ),
       ),
     ),
-    slides: [
-      // タイトルスライド
-      FlutterDeckSlide.title(
-        title: 'Flutter Web入門',
-        subtitle: 'マルチプラットフォーム開発からWebAssemblyまで',
-      ),
-      FlutterDeckSlide.title(
-        title: 'マルチプラットフォーム開発から',
-      ),
-      FlutterDeckSlide.title(
-        title: 'WebAssemblyまで',
-      ),
-
-      // 目次
-      FlutterDeckSlide.blank(
-        builder: (context) => Padding(
-          padding: EdgeInsets.all(48),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                '目次',
-                style: TextStyle(
-                  fontSize: 48,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 32),
-              ...[
-                'Flutter Webとは',
-                'マルチプラットフォーム開発',
-                '既存Webコードとの連携',
-                'WebAssembly (WASM)',
-                '実例とデモ',
-                'まとめ'
-              ].asMap().entries.map((entry) => Padding(
-                    padding: EdgeInsets.only(bottom: 16),
-                    child: Text(
-                      '${entry.key + 1}. ${entry.value}',
-                      style: TextStyle(
-                        fontSize: 32,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  )),
-            ],
-          ),
-        ),
-      ),
+    slides: const [
+      TitleMainSlide(),
+      TitleSubSlide(),
+      TitleWasmSlide(),
+      TocSlide(),
     ],
   ));
 }
