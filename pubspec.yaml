@@ -30,3 +30,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  # 画像アセットの設定
+  assets:
+    - assets/images/
