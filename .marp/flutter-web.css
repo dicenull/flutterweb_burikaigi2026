@@ -1,0 +1,30 @@
+/* @theme flutter-web */
+
+@import "gaia";
+
+:root {
+  --color-primary: #042b59;
+  --color-secondary: #0553b1;
+  --color-highlight: #027dfd;
+  --color-code-bg: #2a622dff;
+}
+
+section {
+  font-family: "PlemolJP35 Console NF", sans-serif;
+}
+h1 {
+  color: var(--color-primary);
+}
+section.lead h1 {
+  text-align: left;
+}
+h2 {
+  color: var(--color-secondary);
+  border-bottom: 2px solid var(--color-secondary);
+}
+section.lead h2 {
+  text-align: left;
+}
+code {
+  background: var(--color-code-bg);
+}

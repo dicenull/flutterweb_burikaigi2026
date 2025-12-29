@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["Burikaigi"]
+  "cSpell.words": ["Burikaigi"],
+  "markdown.marp.themes": [".marp/flutter-web.css"]
 }
