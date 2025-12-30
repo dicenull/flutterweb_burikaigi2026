@@ -34,19 +34,19 @@ class SlideTextTheme {
       fontWeight: FontWeight.bold,
     ),
     heading: TextStyle(
-      fontSize: 100,
+      fontSize: 80,
       fontWeight: FontWeight.bold,
     ),
     body: TextStyle(
-      fontSize: 64,
+      fontSize: 50,
       fontWeight: FontWeight.w400,
     ),
     code: TextStyle(
-      fontSize: 64,
+      fontSize: 44,
       fontWeight: FontWeight.w400,
     ),
     tocItem: TextStyle(
-      fontSize: 80,
+      fontSize: 50,
       fontWeight: FontWeight.w500,
     ),
   );
