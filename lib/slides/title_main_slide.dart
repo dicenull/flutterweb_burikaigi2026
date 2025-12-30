@@ -1,3 +1,4 @@
+import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
@@ -10,10 +11,26 @@ class TitleMainSlide extends FlutterDeckSlideWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlutterDeckSlide.title(
-      title: 'Flutter Web入門',
-      subtitle: 'マルチプラットフォーム開発からWebAssemblyまで',
+    final theme = context.slideTextTheme;
+    return FlutterDeckSlide.blank(
+      builder: (context) => Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Flutter Web入門',
+              style: theme.title,
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 48),
+            Text(
+              'マルチプラットフォーム開発からWebAssemblyまで',
+              style: theme.subtitle,
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
-

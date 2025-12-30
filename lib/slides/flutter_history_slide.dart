@@ -1,3 +1,4 @@
+import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
@@ -11,7 +12,7 @@ class FlutterHistorySlide extends FlutterDeckSlideWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    final theme = context.slideTextTheme;
     return FlutterDeckSlide.blank(
       builder: (context) => Padding(
         padding: const EdgeInsets.all(48),
@@ -20,33 +21,27 @@ class FlutterHistorySlide extends FlutterDeckSlideWidget {
           children: [
             Text(
               'Flutterの歴史',
-              style: theme.textTheme.displayMedium,
+              style: theme.heading,
             ),
-            const SizedBox(height: 32),
+            const SizedBox(height: 48),
             Text(
               '2018年: Dart 2.0 / Flutter 1.0 リリース（モバイル中心）',
-              style: theme.textTheme.bodyLarge?.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 16),
-            Text(
-              '2021年: Flutter 2.0 Web Stable',
-              style: theme.textTheme.bodyLarge?.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 16),
-            Text(
-              '2022年: Flutter 3.0 Desktop Stable',
-              style: theme.textTheme.bodyLarge?.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
+              style: theme.body.copyWith(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 24),
             Text(
+              '2021年: Flutter 2.0 Web Stable',
+              style: theme.body.copyWith(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 24),
+            Text(
+              '2022年: Flutter 3.0 Desktop Stable',
+              style: theme.body.copyWith(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 36),
+            Text(
               '2026年現在、主要プラットフォームをカバー',
-              style: theme.textTheme.bodyLarge,
+              style: theme.body,
             ),
           ],
         ),

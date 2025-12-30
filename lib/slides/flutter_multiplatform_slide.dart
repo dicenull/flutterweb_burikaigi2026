@@ -1,3 +1,4 @@
+import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
@@ -11,8 +12,15 @@ class FlutterMultiplatformSlide extends FlutterDeckSlideWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlutterDeckSlide.title(
-      title: '1. Flutter マルチプラットフォーム',
+    final theme = context.slideTextTheme;
+    return FlutterDeckSlide.blank(
+      builder: (context) => Center(
+        child: Text(
+          '1. Flutter マルチプラットフォーム',
+          style: theme.sectionTitle,
+          textAlign: TextAlign.center,
+        ),
+      ),
     );
   }
 }

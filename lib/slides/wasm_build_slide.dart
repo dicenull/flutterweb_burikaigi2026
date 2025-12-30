@@ -1,6 +1,6 @@
+import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class WasmBuildSlide extends FlutterDeckSlideWidget {
   const WasmBuildSlide({super.key})
@@ -12,7 +12,8 @@ class WasmBuildSlide extends FlutterDeckSlideWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    final materialTheme = Theme.of(context);
+    final slideTheme = context.slideTextTheme;
     return FlutterDeckSlide.blank(
       builder: (context) => Padding(
         padding: const EdgeInsets.all(48),
@@ -21,25 +22,23 @@ class WasmBuildSlide extends FlutterDeckSlideWidget {
           children: [
             Text(
               'WASMビルドを試す',
-              style: theme.textTheme.displayMedium,
+              style: slideTheme.heading,
             ),
-            const SizedBox(height: 32),
+            const SizedBox(height: 48),
             Text(
               'ビルドコマンドは非常にシンプルです：',
-              style: theme.textTheme.bodyLarge,
+              style: slideTheme.body,
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 36),
             Container(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(24),
               decoration: BoxDecoration(
-                color: theme.colorScheme.surfaceContainerHighest,
+                color: materialTheme.colorScheme.surfaceContainerHighest,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Text(
                 'flutter build web --wasm',
-                style: theme.textTheme.bodyLarge?.copyWith(
-                  fontFamily: GoogleFonts.ibmPlexMono().fontFamily,
-                ),
+                style: slideTheme.code,
               ),
             ),
           ],
@@ -48,4 +47,3 @@ class WasmBuildSlide extends FlutterDeckSlideWidget {
     );
   }
 }
-
