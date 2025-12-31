@@ -2,6 +2,7 @@ import 'package:burikaigi2026_slide/slides/flutter_demo_slide.dart';
 import 'package:burikaigi2026_slide/slides/flutter_history_slide.dart';
 import 'package:burikaigi2026_slide/slides/flutter_multiplatform_slide.dart';
 import 'package:burikaigi2026_slide/slides/flutter_web_ready_slide.dart';
+import 'package:burikaigi2026_slide/slides/self_introduction_slide.dart';
 import 'package:burikaigi2026_slide/slides/title_main_slide.dart';
 import 'package:burikaigi2026_slide/slides/toc_slide.dart';
 import 'package:burikaigi2026_slide/slides/ui_equals_f_state_explanation_slide.dart';
@@ -64,6 +65,7 @@ void main() {
       slides: const [
         TitleMainSlide(),
         TocSlide(),
+        SelfIntroductionSlide(),
         FlutterMultiplatformSlide(),
         WhatIsFlutterSlide(),
         UiEqualsFStateSlide(),
