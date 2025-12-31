@@ -66,11 +66,6 @@ class UiEqualsFStateExplanationSlide extends FlutterDeckSlideWidget {
                     '「何を」表示するかを記述する',
                     style: theme.body,
                   ),
-                  const SizedBox(height: 16),
-                  Text(
-                    '状態からUIを生成',
-                    style: theme.body,
-                  ),
                 ],
               ),
             ),
@@ -78,7 +73,7 @@ class UiEqualsFStateExplanationSlide extends FlutterDeckSlideWidget {
             Padding(
               padding: const EdgeInsets.only(left: 48),
               child: Text(
-                '状態が変わると、Widget Treeが再構築され、UIが更新される',
+                '状態が変わると、UIが更新される',
                 style: theme.body,
               ),
             ),

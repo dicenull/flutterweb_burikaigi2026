@@ -25,7 +25,7 @@ class FlutterHistorySlide extends FlutterDeckSlideWidget {
             ),
             const SizedBox(height: 48),
             Text(
-              '2018年: Dart 2.0 / Flutter 1.0 リリース（モバイル中心）',
+              '2018年: Flutter 1.0 Android / iOS Stable',
               style: theme.body.copyWith(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 24),
@@ -49,4 +49,3 @@ class FlutterHistorySlide extends FlutterDeckSlideWidget {
     );
   }
 }
-
