@@ -22,7 +22,7 @@ class FlutterDemoSlide extends FlutterDeckSlideWidget {
           children: [
             // 左側: コードテキスト
             Expanded(
-              flex: 1,
+              flex: 3,
               child: Container(
                 padding: const EdgeInsets.all(24),
                 decoration: BoxDecoration(
@@ -32,9 +32,7 @@ class FlutterDemoSlide extends FlutterDeckSlideWidget {
                 child: SingleChildScrollView(
                   child: SelectableText(
                     _counterCode,
-                    style: theme.code.copyWith(
-                      color: colorScheme.onSurface,
-                    ),
+                    style: theme.code,
                   ),
                 ),
               ),
@@ -50,7 +48,7 @@ class FlutterDemoSlide extends FlutterDeckSlideWidget {
                   borderRadius: BorderRadius.circular(8),
                   boxShadow: [
                     BoxShadow(
-                      color: colorScheme.shadow.withOpacity(0.1),
+                      color: colorScheme.shadow.withValues(alpha: 0.1),
                       blurRadius: 4,
                       offset: const Offset(0, 2),
                     ),
@@ -65,41 +63,19 @@ class FlutterDemoSlide extends FlutterDeckSlideWidget {
     );
   }
 
-  static const String _counterCode = '''import 'package:flutter/material.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  static const String _counterCode =
+      '''class _CounterDemo extends StatefulWidget {
+  const _CounterDemo();
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
+  State<_CounterDemo> createState() => _CounterDemoState();
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class _CounterDemoState extends State<_CounterDemo> {
   int _counter = 0;
 
   void _incrementCounter() {
+    // 状態を更新する
     setState(() {
       _counter++;
     });
@@ -108,27 +84,17 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '\$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            // 宣言的UI。状態が変わるとUIが更新される
+            Text('\$_counter'),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.large(
         onPressed: _incrementCounter,
-        tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
     );
@@ -156,27 +122,19 @@ class _CounterDemoState extends State<_CounterDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Flutter Demo Home Page'),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: Theme.of(context).textTheme.displayLarge,
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.large(
         onPressed: _incrementCounter,
-        tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
     );

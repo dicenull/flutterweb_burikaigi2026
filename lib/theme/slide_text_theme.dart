@@ -42,7 +42,7 @@ class SlideTextTheme {
       fontWeight: FontWeight.w400,
     ),
     code: TextStyle(
-      fontSize: 44,
+      fontSize: 40,
       fontWeight: FontWeight.w400,
     ),
     tocItem: TextStyle(
