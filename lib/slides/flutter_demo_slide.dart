@@ -30,9 +30,8 @@ class FlutterDemoSlide extends FlutterDeckSlideWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: SingleChildScrollView(
-                  child: SelectableText(
-                    _counterCode,
-                    style: theme.code,
+                  child: SelectableText.rich(
+                    _buildHighlightedCode(context, theme, colorScheme),
                   ),
                 ),
               ),
@@ -100,6 +99,39 @@ class _CounterDemoState extends State<_CounterDemo> {
     );
   }
 }''';
+
+  TextSpan _buildHighlightedCode(
+    BuildContext context,
+    SlideTextTheme theme,
+    ColorScheme colorScheme,
+  ) {
+    final lines = _counterCode.split('\n');
+    // 78-81行目（ファイル内）は_counterCode内で11-14行目（0ベースで10-13）
+    // 91-92行目（ファイル内）は_counterCode内で25-26行目（0ベースで24-25）
+    final highlightedLines = {11, 12, 13, 14, 24, 25};
+
+    final spans = <TextSpan>[];
+    for (int i = 0; i < lines.length; i++) {
+      final isHighlighted = highlightedLines.contains(i);
+      final style = isHighlighted
+          ? theme.code.copyWith(
+              color: colorScheme.primary,
+              fontWeight: FontWeight.bold,
+            )
+          : theme.code;
+
+      spans.add(TextSpan(
+        text: lines[i],
+        style: style,
+      ));
+
+      if (i < lines.length - 1) {
+        spans.add(const TextSpan(text: '\n'));
+      }
+    }
+
+    return TextSpan(children: spans);
+  }
 }
 
 // カウンターアプリのデモ
