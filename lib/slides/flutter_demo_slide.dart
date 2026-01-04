@@ -20,7 +20,7 @@ class FlutterDemoSlide extends FlutterDeckSlideWidget {
         codeContent: SelectableText.rich(
           HighlightedCodeBuilder.buildHighlightedCode(
             code: _counterCode,
-            highlightedLines: const {11, 12, 13, 14, 24, 25},
+            highlightedLines: const {11, 12, 13, 14, 24, 25, 30},
             theme: theme,
             colorScheme: colorScheme,
           ),

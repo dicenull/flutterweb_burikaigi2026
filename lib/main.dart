@@ -2,6 +2,8 @@ import 'package:burikaigi2026_slide/slides/flutter_demo_slide.dart';
 import 'package:burikaigi2026_slide/slides/flutter_history_slide.dart';
 import 'package:burikaigi2026_slide/slides/flutter_multiplatform_slide.dart';
 import 'package:burikaigi2026_slide/slides/flutter_web_ready_slide.dart';
+import 'package:burikaigi2026_slide/slides/riverpod_hooks_demo_slide.dart';
+import 'package:burikaigi2026_slide/slides/riverpod_hooks_intro_slide.dart';
 import 'package:burikaigi2026_slide/slides/self_introduction_slide.dart';
 import 'package:burikaigi2026_slide/slides/title_main_slide.dart';
 import 'package:burikaigi2026_slide/slides/toc_slide.dart';
@@ -72,6 +74,8 @@ void main() {
         UiEqualsFStateSlide(),
         UiEqualsFStateExplanationSlide(),
         FlutterDemoSlide(),
+        RiverpodHooksIntroSlide(),
+        RiverpodHooksDemoSlide(),
         FlutterWebReadySlide(),
         WebComponentsSectionSlide(),
         WhyWebComponentsSlide(),
