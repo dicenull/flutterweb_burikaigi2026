@@ -18,32 +18,30 @@ class WasmRenderingSlide extends FlutterDeckSlideWidget {
         padding: const EdgeInsets.all(48),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 32.0,
           children: [
             Text(
               'WASM対応で変わるレンダリング',
               style: theme.heading,
             ),
-            const SizedBox(height: 48),
             Text(
               'Flutter 3.22 以降でWASMビルドが正式対応！',
               style: theme.body.copyWith(fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 36),
             Text(
               '従来のJavaScriptビルド（CanvasKit/SKWA）との違い',
               style: theme.body,
             ),
-            const SizedBox(height: 24),
             Padding(
               padding: const EdgeInsets.only(left: 48),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: 32.0,
                 children: [
                   Text(
                     'パフォーマンス向上: より滑らかなアニメーション',
                     style: theme.body.copyWith(fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(height: 16),
                   Text(
                     'バイナリサイズ: 効率的な実行',
                     style: theme.body.copyWith(fontWeight: FontWeight.bold),

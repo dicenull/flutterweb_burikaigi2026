@@ -87,7 +87,7 @@ class _CounterDemoState extends State<_CounterDemo> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            // 宣言的UI。状態が変わるとUIが更新される
+            // 宣言的UI 状態が変わるとUIが更新される
             Text('\$_counter'),
           ],
         ),
@@ -157,6 +157,7 @@ class _CounterDemoState extends State<_CounterDemo> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          spacing: 32.0,
           children: <Widget>[
             Text(
               '$_counter',

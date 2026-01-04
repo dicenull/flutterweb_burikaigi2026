@@ -19,17 +19,16 @@ class WasmBuildSlide extends FlutterDeckSlideWidget {
         padding: const EdgeInsets.all(48),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 32.0,
           children: [
             Text(
               'WASMビルドを試す',
               style: slideTheme.heading,
             ),
-            const SizedBox(height: 48),
             Text(
               'ビルドコマンドは非常にシンプルです：',
               style: slideTheme.body,
             ),
-            const SizedBox(height: 36),
             Container(
               padding: const EdgeInsets.all(24),
               decoration: BoxDecoration(

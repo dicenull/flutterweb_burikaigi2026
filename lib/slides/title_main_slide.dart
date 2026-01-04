@@ -16,13 +16,13 @@ class TitleMainSlide extends FlutterDeckSlideWidget {
       builder: (context) => Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          spacing: 32.0,
           children: [
             Text(
               'Flutter Web入門',
               style: theme.title,
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 48),
             Text(
               'マルチプラットフォーム開発からWebAssemblyまで',
               style: theme.subtitle,

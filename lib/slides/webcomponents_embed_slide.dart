@@ -19,22 +19,20 @@ class WebComponentsEmbedSlide extends FlutterDeckSlideWidget {
         padding: const EdgeInsets.all(48),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 32.0,
           children: [
             Text(
               'Flutter Webへの埋め込み',
               style: slideTheme.heading,
             ),
-            const SizedBox(height: 48),
             Text(
               'HtmlElementView を利用して、FlutterのWidget Tree内にWCを配置',
               style: slideTheme.body,
             ),
-            const SizedBox(height: 36),
             Text(
               '詳細は弊社のエンジニアブログ（Zenn）で公開中！',
               style: slideTheme.body,
             ),
-            const SizedBox(height: 48),
             Container(
               padding: const EdgeInsets.all(24),
               decoration: BoxDecoration(
@@ -43,17 +41,16 @@ class WebComponentsEmbedSlide extends FlutterDeckSlideWidget {
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: 32.0,
                 children: [
                   Text(
                     '参考記事:',
                     style: slideTheme.body.copyWith(fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(height: 16),
                   Text(
                     'Flutter WebでWeb Componentsを活用する',
                     style: slideTheme.body,
                   ),
-                  const SizedBox(height: 8),
                   Text(
                     'https://zenn.dev/jigjp_engineer/articles/cc7fbc31d045d',
                     style: slideTheme.code.copyWith(

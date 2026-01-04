@@ -19,10 +19,11 @@ class FlutterWebReadySlide extends FlutterDeckSlideWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 32.0,
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              spacing: 32,
+              spacing: 32.0,
               children: [
                 Text(
                   'Flutter Web活用事例',

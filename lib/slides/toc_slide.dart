@@ -16,12 +16,12 @@ class TocSlide extends FlutterDeckSlideWidget {
         padding: const EdgeInsets.all(48),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 32.0,
           children: [
             Text(
               '目次',
               style: theme.title,
             ),
-            const SizedBox(height: 48),
             ...[
               'Flutter Webとは',
               'マルチプラットフォーム開発',

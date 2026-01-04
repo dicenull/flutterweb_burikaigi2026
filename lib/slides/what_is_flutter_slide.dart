@@ -18,27 +18,24 @@ class WhatIsFlutterSlide extends FlutterDeckSlideWidget {
         padding: const EdgeInsets.all(48),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 32.0,
           children: [
             Text(
               'Flutterとは',
               style: theme.heading,
             ),
-            const SizedBox(height: 48),
             Text(
               'Google製のUIフレームワーク',
               style: theme.body.copyWith(fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 24),
             Text(
               '言語: Dart',
               style: theme.body.copyWith(fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 24),
             Text(
               '特徴: マルチプラットフォーム対応',
               style: theme.body.copyWith(fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 24),
             Padding(
               padding: const EdgeInsets.only(left: 48),
               child: Text(
@@ -46,22 +43,20 @@ class WhatIsFlutterSlide extends FlutterDeckSlideWidget {
                 style: theme.body,
               ),
             ),
-            const SizedBox(height: 36),
             Text(
               'UIの仕組み: すべてが Widget',
               style: theme.body.copyWith(fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 24),
             Padding(
               padding: const EdgeInsets.only(left: 48),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: 32.0,
                 children: [
                   Text(
                     'プラットフォームごとのUI差分なし',
                     style: theme.body,
                   ),
-                  const SizedBox(height: 16),
                   Text(
                     'パッケージ（pub.dev）が複数のプラットフォームをサポート',
                     style: theme.body,
