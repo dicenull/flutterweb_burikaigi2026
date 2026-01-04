@@ -84,7 +84,6 @@ void main() {
         FlutterWebRenderingSlide(),
         FlutterWebRenderingConclusionSlide(),
         FlutterWebSeoSlide(),
-        FlutterWebSeoSsrSlide(),
         FlutterWebPwaSlide(),
         FlutterWebPwaServiceWorkerSlide(),
         FlutterWebReadySlide(),
