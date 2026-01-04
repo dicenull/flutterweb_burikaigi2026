@@ -19,6 +19,7 @@ import 'package:burikaigi2026_slide/slides/wasm_section_slide.dart';
 import 'package:burikaigi2026_slide/slides/webcomponents_communication_slide.dart';
 import 'package:burikaigi2026_slide/slides/webcomponents_display_slide.dart';
 import 'package:burikaigi2026_slide/slides/webcomponents_embed_slide.dart';
+import 'package:burikaigi2026_slide/slides/webcomponents_reference_slide.dart';
 import 'package:burikaigi2026_slide/slides/webcomponents_register_slide.dart';
 import 'package:burikaigi2026_slide/slides/webcomponents_section_slide.dart';
 import 'package:burikaigi2026_slide/slides/what_is_flutter_slide.dart';
@@ -96,6 +97,7 @@ void main() {
         WebComponentsRegisterSlide(),
         WebComponentsDisplaySlide(),
         WebComponentsCommunicationSlide(),
+        WebComponentsReferenceSlide(),
         WasmSectionSlide(),
         WasmRenderingSlide(),
         WasmBuildSlide(),
