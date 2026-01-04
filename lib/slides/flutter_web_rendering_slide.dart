@@ -179,6 +179,7 @@ class FlutterWebRenderingConclusionSlide extends FlutterDeckSlideWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.slideTextTheme;
+    final colorScheme = Theme.of(context).colorScheme;
     return FlutterDeckSlide.blank(
       builder: (context) => Padding(
         padding: const EdgeInsets.all(48),
@@ -190,34 +191,134 @@ class FlutterWebRenderingConclusionSlide extends FlutterDeckSlideWidget {
               'レンダリング方式の選択',
               style: theme.heading,
             ),
-            const SizedBox(height: 48),
-            Text(
-              '結論',
-              style: theme.body.copyWith(fontWeight: FontWeight.bold),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 48),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 32.0,
+            Expanded(
+              child: Row(
                 children: [
-                  Text(
-                    '該当するIssueがなければWASM推奨',
-                    style: theme.body,
+                  Expanded(
+                    child: _RecommendationCard(
+                      title: 'WASM',
+                      subtitle: '将来推奨',
+                      description: 'WASMを試してみて、\n問題なければ継続利用',
+                      colorScheme: colorScheme,
+                      theme: theme,
+                      isRecommended: true,
+                    ),
                   ),
-                  Text(
-                    '現時点ではCanvasKit',
-                    style: theme.body,
+                  const SizedBox(width: 24),
+                  Expanded(
+                    child: _RecommendationCard(
+                      title: 'CanvasKit',
+                      subtitle: '現時点で推奨',
+                      description: 'WASMに問題がある場合は\nCanvasKitを使用',
+                      colorScheme: colorScheme,
+                      theme: theme,
+                      isRecommended: false,
+                    ),
                   ),
-                  Text(
-                    'HTMLレンダリングは廃止されている',
-                    style: theme.body,
+                  const SizedBox(width: 24),
+                  Expanded(
+                    child: _RecommendationCard(
+                      title: 'HTML',
+                      subtitle: '廃止',
+                      description: 'HTMLレンダリングは\n廃止されている',
+                      colorScheme: colorScheme,
+                      theme: theme,
+                      isRecommended: false,
+                      isDeprecated: true,
+                    ),
                   ),
                 ],
               ),
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _RecommendationCard extends StatelessWidget {
+  const _RecommendationCard({
+    required this.title,
+    required this.subtitle,
+    required this.description,
+    required this.colorScheme,
+    required this.theme,
+    required this.isRecommended,
+    this.isDeprecated = false,
+  });
+
+  final String title;
+  final String subtitle;
+  final String description;
+  final ColorScheme colorScheme;
+  final SlideTextTheme theme;
+  final bool isRecommended;
+  final bool isDeprecated;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        color: isDeprecated
+            ? colorScheme.surfaceContainerHighest
+            : isRecommended
+                ? colorScheme.primaryContainer.withOpacity(0.3)
+                : colorScheme.surfaceContainerHighest,
+        borderRadius: BorderRadius.circular(12),
+        border: isRecommended
+            ? Border.all(
+                color: colorScheme.primary,
+                width: 2,
+              )
+            : null,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  title,
+                  style: theme.body.copyWith(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 48,
+                    color: isDeprecated
+                        ? colorScheme.onSurface.withOpacity(0.4)
+                        : isRecommended
+                            ? colorScheme.primary
+                            : colorScheme.onSurface,
+                  ),
+                ),
+              ),
+              if (isRecommended)
+                Icon(
+                  Icons.check_circle,
+                  color: colorScheme.primary,
+                  size: 32,
+                ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Text(
+            subtitle,
+            style: theme.body.copyWith(
+              fontSize: 36,
+              color: isDeprecated
+                  ? colorScheme.error
+                  : colorScheme.onSurface.withOpacity(0.7),
+            ),
+          ),
+          const SizedBox(height: 16),
+          Text(
+            description,
+            style: theme.body.copyWith(
+              fontSize: 40,
+            ),
+          ),
+        ],
       ),
     );
   }
