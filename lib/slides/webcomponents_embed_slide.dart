@@ -1,4 +1,5 @@
 import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
+import 'package:burikaigi2026_slide/widgets/code_block.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
@@ -33,12 +34,7 @@ class WebComponentsEmbedSlide extends FlutterDeckSlideWidget {
               '詳細は弊社のエンジニアブログ（Zenn）で公開中！',
               style: slideTheme.body,
             ),
-            Container(
-              padding: const EdgeInsets.all(24),
-              decoration: BoxDecoration(
-                color: materialTheme.colorScheme.surfaceContainerHighest,
-                borderRadius: BorderRadius.circular(8),
-              ),
+            CodeBlock(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: 32.0,

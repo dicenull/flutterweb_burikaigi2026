@@ -1,4 +1,5 @@
 import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
+import 'package:burikaigi2026_slide/widgets/code_block.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
@@ -23,16 +24,10 @@ class FlutterDemoSlide extends FlutterDeckSlideWidget {
             // 左側: コードテキスト
             Expanded(
               flex: 3,
-              child: Container(
-                padding: const EdgeInsets.all(24),
-                decoration: BoxDecoration(
-                  color: colorScheme.surfaceContainerHighest,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: SingleChildScrollView(
-                  child: SelectableText.rich(
-                    _buildHighlightedCode(context, theme, colorScheme),
-                  ),
+              child: CodeBlock(
+                scrollable: true,
+                child: SelectableText.rich(
+                  _buildHighlightedCode(context, theme, colorScheme),
                 ),
               ),
             ),
