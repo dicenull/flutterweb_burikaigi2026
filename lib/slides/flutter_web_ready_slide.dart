@@ -17,47 +17,40 @@ class FlutterWebReadySlide extends FlutterDeckSlideWidget {
       builder: (context) => Padding(
         padding: const EdgeInsets.all(48),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Flutter WebってプロダクトReadyなの？',
-              style: theme.heading,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 32,
+              children: [
+                Text(
+                  'Flutter Web活用事例',
+                  style: theme.heading,
+                ),
+                Text(
+                  '「ふわっち」のモバイルWeb',
+                  style: theme.body.copyWith(fontWeight: FontWeight.bold),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 48),
+                  child: Text(
+                    '視聴・配信機能を構築',
+                    style: theme.body,
+                  ),
+                ),
+                Text(
+                  'モバイルアプリのコードを活用して、同じ体験を届けられる',
+                  style: theme.body.copyWith(fontWeight: FontWeight.bold),
+                ),
+              ],
             ),
-            const SizedBox(height: 48),
-            Text(
-              '結論：弊社ではフル活用しています！',
-              style: theme.body.copyWith(
-                fontSize: 80,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 36),
-            Text(
-              '事例: 「ふわっち」のモバイルWeb版',
-              style: theme.body.copyWith(fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 24),
-            Padding(
-              padding: const EdgeInsets.only(left: 48),
-              child: Text(
-                '視聴・配信機能の両方をFlutter Webで構築',
-                style: theme.body,
-              ),
-            ),
-            const SizedBox(height: 36),
-            Text(
-              'メリット: モバイルアプリに近い体験をWebで提供可能',
-              style: theme.body.copyWith(fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 36),
-            Text(
-              '本日のメイン: その中で見えてきた「既存資産」や「最新技術」との付き合い方',
-              style: theme.body,
-            ),
+            Center(
+              child: Text('今日はそんなFlutter Webを紹介します！', style: theme.heading),
+            )
           ],
         ),
       ),
     );
   }
 }
-
