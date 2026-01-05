@@ -29,7 +29,7 @@ class WasmRenderingSlide extends FlutterDeckSlideWidget {
               style: theme.body.copyWith(fontWeight: FontWeight.bold),
             ),
             Text(
-              '従来のJavaScriptビルド（CanvasKit/SKWA）との違い',
+              '従来のJavaScriptビルド（CanvasKit/SK Wasm） との違い',
               style: theme.body,
             ),
             Padding(

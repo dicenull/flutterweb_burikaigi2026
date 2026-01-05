@@ -1,6 +1,8 @@
 import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
+import 'package:web/web.dart' as web;
 
 class WebComponentsReferenceSlide extends FlutterDeckSlideWidget {
   const WebComponentsReferenceSlide({super.key})
@@ -23,7 +25,7 @@ class WebComponentsReferenceSlide extends FlutterDeckSlideWidget {
           spacing: 32.0,
           children: [
             Text(
-              '詳しくはZennの記事をどうぞ',
+              '詳細はZennの記事をご覧ください',
               style: slideTheme.heading,
             ),
             const SizedBox(height: 24),
@@ -50,12 +52,22 @@ class WebComponentsReferenceSlide extends FlutterDeckSlideWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  SelectableText(
-                    'https://zenn.dev/jigjp_engineer/articles/cc7fbc31d045d2',
-                    style: slideTheme.body.copyWith(
-                      fontSize: 36,
-                      color: colorScheme.primary,
-                      decoration: TextDecoration.underline,
+                  GestureDetector(
+                    onTap: () {
+                      if (kIsWeb) {
+                        web.window.open(
+                          'https://zenn.dev/jigjp_engineer/articles/cc7fbc31d045d2',
+                          '_blank',
+                        );
+                      }
+                    },
+                    child: Text(
+                      'https://zenn.dev/jigjp_engineer/articles/cc7fbc31d045d2',
+                      style: slideTheme.body.copyWith(
+                        fontSize: 36,
+                        color: colorScheme.primary,
+                        decoration: TextDecoration.underline,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 24),

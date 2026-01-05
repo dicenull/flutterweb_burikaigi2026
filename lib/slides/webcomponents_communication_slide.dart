@@ -23,16 +23,30 @@ class WebComponentsCommunicationSlide extends FlutterDeckSlideWidget {
     final theme = context.slideTextTheme;
     final colorScheme = Theme.of(context).colorScheme;
     return FlutterDeckSlide.blank(
-      builder: (context) => CodeDemoSlide(
-        codeContent: SelectableText.rich(
-          HighlightedCodeBuilder.buildHighlightedCode(
-            code: _communicationCode,
-            highlightedLines: {},
-            theme: theme,
-            colorScheme: colorScheme,
+      builder: (context) => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(24),
+            child: Text(
+              '3. 双方向通信',
+              style: theme.heading,
+            ),
           ),
-        ),
-        demoContent: const _CommunicationDemo(),
+          Expanded(
+            child: CodeDemoSlide(
+              codeContent: SelectableText.rich(
+                HighlightedCodeBuilder.buildHighlightedCode(
+                  code: _communicationCode,
+                  highlightedLines: {},
+                  theme: theme,
+                  colorScheme: colorScheme,
+                ),
+              ),
+              demoContent: const _CommunicationDemo(),
+            ),
+          ),
+        ],
       ),
     );
   }
