@@ -48,16 +48,12 @@ void registerWebComponent() {
     'communication-demo',
     (int viewId) {
       final container = web.HTMLDivElement()
-        ..style.width = '100%'
-        ..style.height = '100%'
-        ..style.display = 'flex'
-        ..style.flexDirection = 'column'
-        ..style.gap = '16px'
-        ..style.padding = '16px';
+          ..style.display = 'flex'
+          ..style.flexDirection = 'column';
       
       // 表示エリア
       final display = web.HTMLDivElement()
-        ..id = 'display-\$viewId'
+        ..id = 'display'
         ..text = 'Flutterからの値: なし';
       container.append(display);
       
@@ -114,7 +110,7 @@ class _CommunicationDemoState extends State<_CommunicationDemo> {
   
   void _updateFromFlutter(String value) {
     // Flutter → WC: プロパティを設定
-    final display = web.document.getElementById('display-0') as web.HTMLDivElement?;
+    final display = web.document.getElementById('display') as web.HTMLDivElement?;
     if (display != null) {
       display.text = 'Flutterからの値: \$value';
     }
@@ -187,7 +183,7 @@ class _CommunicationDemoState extends State<_CommunicationDemo> {
 
         // 表示エリア
         final display = web.HTMLDivElement()
-          ..id = 'display-$viewId'
+          ..id = 'display'
           ..text = 'Flutterからの値: なし'
           ..style.padding = '8px'
           ..style.border = '1px solid #ccc'
@@ -249,7 +245,7 @@ class _CommunicationDemoState extends State<_CommunicationDemo> {
   void _updateFromFlutter(String value) {
     if (!kIsWeb) return;
     // Flutter → WC: プロパティを設定
-    final display = web.document.getElementById('display-0');
+    final display = web.document.getElementById('display');
     if (display != null) {
       display.text = 'Flutterからの値: $value';
     }

@@ -15,6 +15,7 @@ class WebComponentsDisplaySlide extends FlutterDeckSlideWidget {
   @override
   Widget build(BuildContext context) {
     final slideTheme = context.slideTextTheme;
+    final colorScheme = Theme.of(context).colorScheme;
     return FlutterDeckSlide.blank(
       builder: (context) => Padding(
         padding: const EdgeInsets.all(48),
@@ -78,16 +79,22 @@ class MyWidget extends StatelessWidget {
                             spacing: 12.0,
                             children: [
                               Text(
-                                '• viewTypeは登録時の識別子と一致させる',
+                                '• 文字列のIDで配置',
                                 style: slideTheme.body,
                               ),
                               Text(
-                                '• SizedBoxでサイズを指定可能',
+                                '• 通常のWidgetのように配置',
                                 style: slideTheme.body,
                               ),
                               Text(
-                                '• 通常のWidgetと同じように配置可能',
+                                '• HTMLでWCを埋め込む',
                                 style: slideTheme.body,
+                              ),
+                              SizedBox(height: 24),
+                              Text(
+                                '⚠️HTMLの埋め込みは高価な処理',
+                                style: slideTheme.body
+                                    .copyWith(color: colorScheme.error),
                               ),
                             ],
                           ),
@@ -104,4 +111,3 @@ class MyWidget extends StatelessWidget {
     );
   }
 }
-

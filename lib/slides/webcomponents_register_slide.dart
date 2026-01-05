@@ -73,15 +73,15 @@ void registerWebComponent() {
                             spacing: 12.0,
                             children: [
                               Text(
-                                '• viewTypeは一意の識別子',
+                                '• 文字列でIDを指定',
                                 style: slideTheme.body,
                               ),
                               Text(
-                                '• web.document.createElement()で要素を作成',
+                                '• web.documentでDOM操作',
                                 style: slideTheme.body,
                               ),
                               Text(
-                                '• プロパティやイベントリスナーも設定可能',
+                                '• プロパティやイベントリスナーも設定可',
                                 style: slideTheme.body,
                               ),
                             ],
@@ -99,4 +99,3 @@ void registerWebComponent() {
     );
   }
 }
-
