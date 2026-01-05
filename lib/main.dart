@@ -13,6 +13,7 @@ import 'package:burikaigi2026_slide/slides/title_main_slide.dart';
 import 'package:burikaigi2026_slide/slides/toc_slide.dart';
 import 'package:burikaigi2026_slide/slides/ui_equals_f_state_explanation_slide.dart';
 import 'package:burikaigi2026_slide/slides/ui_equals_f_state_slide.dart';
+import 'package:burikaigi2026_slide/slides/wasm_build_files_slide.dart';
 import 'package:burikaigi2026_slide/slides/wasm_build_slide.dart';
 import 'package:burikaigi2026_slide/slides/wasm_rendering_slide.dart';
 import 'package:burikaigi2026_slide/slides/wasm_section_slide.dart';
@@ -101,6 +102,7 @@ void main() {
         WasmSectionSlide(),
         WasmRenderingSlide(),
         WasmBuildSlide(),
+        WasmBuildFilesFlowSlide(),
       ],
     ),
   ));
