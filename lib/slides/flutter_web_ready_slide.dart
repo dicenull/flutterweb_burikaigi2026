@@ -88,8 +88,8 @@ class FlutterWebReadySlide extends FlutterDeckSlideWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           border: Border.all(
-                            color: colorScheme.outline.withValues(alpha: 0.3),
-                            width: 1,
+                            color: colorScheme.outline.withValues(alpha: SlideDimensions.alphaHigh),
+                            width: SlideDimensions.borderWidthNormal,
                           ),
                           borderRadius:
                       BorderRadius.circular(SlideDimensions.borderRadiusSmall),
@@ -108,8 +108,8 @@ class FlutterWebReadySlide extends FlutterDeckSlideWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           border: Border.all(
-                            color: colorScheme.outline.withValues(alpha: 0.3),
-                            width: 1,
+                            color: colorScheme.outline.withValues(alpha: SlideDimensions.alphaHigh),
+                            width: SlideDimensions.borderWidthNormal,
                           ),
                           borderRadius:
                       BorderRadius.circular(SlideDimensions.borderRadiusSmall),

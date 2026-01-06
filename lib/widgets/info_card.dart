@@ -68,7 +68,7 @@ class InfoCard extends StatelessWidget {
         border: isHighlighted
             ? Border.all(
                 color: colorScheme.primary,
-                width: 2,
+                width: SlideDimensions.borderWidthHighlight,
               )
             : null,
       ),
@@ -112,7 +112,11 @@ class InfoCard extends StatelessWidget {
           ],
 
           // 説明
-          SizedBox(height: isCompact ? 8 : 16),
+          SizedBox(
+            height: isCompact
+                ? SlideDimensions.tinySpacing
+                : SlideDimensions.smallSpacing,
+          ),
           Text(
             description,
             style: theme.body.copyWith(
@@ -122,12 +126,12 @@ class InfoCard extends StatelessWidget {
 
           // 箇条書きリスト
           if (details != null && details!.isNotEmpty) ...[
-            const SizedBox(height: 8),
+            const SizedBox(height: SlideDimensions.tinySpacing),
             Padding(
-              padding: const EdgeInsets.only(left: 24),
+              padding: const EdgeInsets.only(left: SlideDimensions.cardPadding),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 12.0,
+                spacing: SlideDimensions.tinySpacing + 4,
                 children: details!
                     .map((detail) => Text(
                           '• $detail',

@@ -2,6 +2,7 @@
 import 'dart:js_interop';
 import 'dart:ui_web';
 
+import 'package:burikaigi2026_slide/theme/slide_dimensions.dart';
 import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
 import 'package:burikaigi2026_slide/widgets/code_demo_slide.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
@@ -27,7 +28,7 @@ class WebComponentsCommunicationSlide extends FlutterDeckSlideWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.all(24),
+            padding: const EdgeInsets.all(SlideDimensions.cardPadding),
             child: Text(
               '3. 双方向通信',
               style: theme.heading,
@@ -278,17 +279,17 @@ class _CommunicationDemoState extends State<_CommunicationDemo> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          spacing: 24.0,
+          spacing: SlideDimensions.itemSpacing,
           children: [
             // Web Componentゾーン
             Container(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(SlideDimensions.smallPadding),
               decoration: BoxDecoration(
                 border: Border.all(
                   color: colorScheme.primary,
-                  width: 2,
+                  width: SlideDimensions.borderWidthHighlight,
                 ),
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(SlideDimensions.borderRadiusSmall),
               ),
               child: Column(
                 children: [
@@ -299,7 +300,7 @@ class _CommunicationDemoState extends State<_CommunicationDemo> {
                           fontWeight: FontWeight.bold,
                         ),
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: SlideDimensions.tinySpacing),
                   SizedBox(
                     width: 300,
                     height: 250,
@@ -312,13 +313,13 @@ class _CommunicationDemoState extends State<_CommunicationDemo> {
             ),
             // Flutterゾーン
             Container(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(SlideDimensions.smallPadding),
               decoration: BoxDecoration(
                 border: Border.all(
                   color: colorScheme.secondary,
-                  width: 2,
+                  width: SlideDimensions.borderWidthHighlight,
                 ),
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(SlideDimensions.borderRadiusSmall),
               ),
               child: Column(
                 children: [
@@ -329,12 +330,12 @@ class _CommunicationDemoState extends State<_CommunicationDemo> {
                           fontWeight: FontWeight.bold,
                         ),
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: SlideDimensions.tinySpacing),
                   Text(
                     'Web Componentからの値: $_wcValue',
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: SlideDimensions.tinySpacing),
                   ElevatedButton(
                     onPressed: () {
                       _counter++;

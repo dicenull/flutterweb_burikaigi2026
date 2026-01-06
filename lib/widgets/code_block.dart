@@ -1,3 +1,4 @@
+import 'package:burikaigi2026_slide/theme/slide_dimensions.dart';
 import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class CodeBlock extends StatelessWidget {
   /// コードブロック内に表示するウィジェット
   final Widget child;
 
-  /// パディング（デフォルト: EdgeInsets.all(24)）
+  /// パディング（デフォルト: EdgeInsets.all(SlideDimensions.cardPadding)）
   final EdgeInsets? padding;
 
   /// スクロール可能にするか（デフォルト: false）
@@ -25,10 +26,10 @@ class CodeBlock extends StatelessWidget {
     final colorScheme = materialTheme.colorScheme;
 
     final content = Container(
-      padding: padding ?? const EdgeInsets.all(24),
+      padding: padding ?? const EdgeInsets.all(SlideDimensions.cardPadding),
       decoration: BoxDecoration(
         color: colorScheme.surfaceContainerHighest,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(SlideDimensions.borderRadiusSmall),
       ),
       child: child,
     );
@@ -56,7 +57,7 @@ class SimpleCodeBlock extends StatelessWidget {
   /// テキストスタイル（デフォルト: theme.code）
   final TextStyle? style;
 
-  /// パディング（デフォルト: EdgeInsets.all(24)）
+  /// パディング（デフォルト: EdgeInsets.all(SlideDimensions.cardPadding)）
   final EdgeInsets? padding;
 
   @override

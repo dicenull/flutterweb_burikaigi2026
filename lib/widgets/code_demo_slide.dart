@@ -1,3 +1,4 @@
+import 'package:burikaigi2026_slide/theme/slide_dimensions.dart';
 import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
 import 'package:burikaigi2026_slide/widgets/code_block.dart';
 import 'package:flutter/material.dart';
@@ -25,13 +26,13 @@ class CodeDemoSlide extends StatelessWidget {
   /// デモプレビューのflex（デフォルト: 1）
   final int demoFlex;
 
-  /// コードとデモの間のスペーシング（デフォルト: 24.0）
+  /// コードとデモの間のスペーシング（デフォルト: SlideDimensions.itemSpacing）
   final double spacing;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(48),
+      padding: const EdgeInsets.all(SlideDimensions.screenPadding),
       child: Row(
         children: [
           // 左側: コードテキスト
@@ -64,10 +65,10 @@ class _DemoPreview extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     return Container(
-      padding: const EdgeInsets.all(24),
+      padding: const EdgeInsets.all(SlideDimensions.cardPadding),
       decoration: BoxDecoration(
         color: colorScheme.surface,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(SlideDimensions.borderRadiusSmall),
         boxShadow: [
           BoxShadow(
             color: colorScheme.shadow.withValues(alpha: 0.1),

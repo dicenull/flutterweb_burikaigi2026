@@ -30,8 +30,8 @@ class FlutterWebRenderingSlide extends FlutterDeckSlideWidget {
               child: SingleChildScrollView(
                 child: Table(
                   border: TableBorder.all(
-                    color: colorScheme.outline.withValues(alpha: 0.3),
-                    width: 1,
+                    color: colorScheme.outline.withValues(alpha: SlideDimensions.alphaHigh),
+                    width: SlideDimensions.borderWidthNormal,
                   ),
                   columnWidths: const {
                     0: FlexColumnWidth(1.2),
@@ -151,7 +151,7 @@ class _TableCell extends StatelessWidget {
     }
 
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(SlideDimensions.smallPadding),
       decoration: isHighlighted && !isHeader
           ? BoxDecoration(
               color: isWarning
@@ -205,7 +205,7 @@ class FlutterWebRenderingConclusionSlide extends FlutterDeckSlideWidget {
                       isRecommended: true,
                     ),
                   ),
-                  const SizedBox(width: 24),
+                  const SizedBox(width: SlideDimensions.itemSpacing),
                   Expanded(
                     child: _RecommendationCard(
                       title: 'CanvasKit',
@@ -216,7 +216,7 @@ class FlutterWebRenderingConclusionSlide extends FlutterDeckSlideWidget {
                       isRecommended: false,
                     ),
                   ),
-                  const SizedBox(width: 24),
+                  const SizedBox(width: SlideDimensions.itemSpacing),
                   Expanded(
                     child: _RecommendationCard(
                       title: 'HTML',
@@ -260,18 +260,18 @@ class _RecommendationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(24),
+      padding: const EdgeInsets.all(SlideDimensions.cardPadding),
       decoration: BoxDecoration(
         color: isDeprecated
             ? colorScheme.surfaceContainerHighest
             : isRecommended
-                ? colorScheme.primaryContainer.withValues(alpha: 0.3)
+                ? colorScheme.primaryContainer.withValues(alpha: SlideDimensions.alphaHigh)
                 : colorScheme.surfaceContainerHighest,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(SlideDimensions.borderRadiusLarge),
         border: isRecommended
             ? Border.all(
                 color: colorScheme.primary,
-                width: 2,
+                width: SlideDimensions.borderWidthHighlight,
               )
             : null,
       ),
@@ -302,7 +302,7 @@ class _RecommendationCard extends StatelessWidget {
                 ),
             ],
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: SlideDimensions.tinySpacing),
           Text(
             subtitle,
             style: theme.body.copyWith(
@@ -312,7 +312,7 @@ class _RecommendationCard extends StatelessWidget {
                   : colorScheme.onSurface.withValues(alpha: 0.7),
             ),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: SlideDimensions.smallSpacing),
           Text(
             description,
             style: theme.body.copyWith(

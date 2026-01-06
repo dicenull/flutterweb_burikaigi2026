@@ -59,7 +59,7 @@ class WasmBuildFilesFlowSlide extends FlutterDeckSlideWidget {
                           BorderRadius.circular(SlideDimensions.borderRadiusSmall),
                       border: Border.all(
                         color: colorScheme.primary,
-                        width: 2,
+                        width: SlideDimensions.borderWidthHighlight,
                       ),
                     ),
                     child: Text(

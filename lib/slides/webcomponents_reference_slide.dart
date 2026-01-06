@@ -38,7 +38,7 @@ class WebComponentsReferenceSlide extends FlutterDeckSlideWidget {
                     BorderRadius.circular(SlideDimensions.borderRadiusLarge),
                 border: Border.all(
                   color: colorScheme.primary,
-                  width: 2,
+                  width: SlideDimensions.borderWidthHighlight,
                 ),
               ),
               child: Column(
