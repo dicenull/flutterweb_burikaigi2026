@@ -1,3 +1,4 @@
+import 'package:burikaigi2026_slide/theme/slide_dimensions.dart';
 import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -47,12 +48,15 @@ class InfoCard extends StatelessWidget {
     final theme = context.slideTextTheme;
 
     final isCompact = size == InfoCardSize.compact;
-    final padding = isCompact ? 16.0 : 24.0;
+    final padding =
+        isCompact ? SlideDimensions.smallPadding : SlideDimensions.cardPadding;
     final titleFontSize = isCompact ? 36.0 : 48.0;
     final subtitleFontSize = isCompact ? 32.0 : 36.0;
     final descriptionFontSize = isCompact ? 28.0 : 40.0;
     final iconSize = isCompact ? 24.0 : 32.0;
-    final borderRadius = isCompact ? 8.0 : 12.0;
+    final borderRadius = isCompact
+        ? SlideDimensions.borderRadiusSmall
+        : SlideDimensions.borderRadiusLarge;
 
     return Container(
       padding: EdgeInsets.all(padding),

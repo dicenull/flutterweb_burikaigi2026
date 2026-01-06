@@ -1,3 +1,4 @@
+import 'package:burikaigi2026_slide/theme/slide_dimensions.dart';
 import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
@@ -17,10 +18,10 @@ class WebComponentsEmbedSlide extends FlutterDeckSlideWidget {
     final colorScheme = Theme.of(context).colorScheme;
     return FlutterDeckSlide.blank(
       builder: (context) => Padding(
-        padding: const EdgeInsets.all(48),
+        padding: const EdgeInsets.all(SlideDimensions.screenPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: 32.0,
+          spacing: SlideDimensions.sectionSpacing,
           children: [
             Text(
               'Web Componentsとの連携',
@@ -34,7 +35,7 @@ class WebComponentsEmbedSlide extends FlutterDeckSlideWidget {
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  spacing: 20.0,
+                  spacing: SlideDimensions.itemSpacing - 4,
                   children: [
                     Text(
                       '手順',
@@ -42,10 +43,11 @@ class WebComponentsEmbedSlide extends FlutterDeckSlideWidget {
                           slideTheme.body.copyWith(fontWeight: FontWeight.bold),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 48),
+                      padding: const EdgeInsets.only(
+                          left: SlideDimensions.screenPadding),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        spacing: 16.0,
+                        spacing: SlideDimensions.smallSpacing,
                         children: [
                           Text(
                             '1. PlatformViewRegistryでWeb Componentを登録',
@@ -62,16 +64,17 @@ class WebComponentsEmbedSlide extends FlutterDeckSlideWidget {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: SlideDimensions.smallSpacing),
                     Container(
-                      padding: const EdgeInsets.all(24),
+                      padding: const EdgeInsets.all(SlideDimensions.cardPadding),
                       decoration: BoxDecoration(
                         color: colorScheme.surfaceContainerHighest,
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(
+                            SlideDimensions.borderRadiusSmall),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        spacing: 12.0,
+                        spacing: SlideDimensions.tinySpacing + 4,
                         children: [
                           Text(
                             'メリット',
@@ -80,10 +83,11 @@ class WebComponentsEmbedSlide extends FlutterDeckSlideWidget {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 24),
+                            padding: const EdgeInsets.only(
+                                left: SlideDimensions.cardPadding),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              spacing: 12.0,
+                              spacing: SlideDimensions.tinySpacing + 4,
                               children: [
                                 Text(
                                   '• FlutterのWidget Tree内に配置可能',

@@ -1,3 +1,4 @@
+import 'package:burikaigi2026_slide/theme/slide_dimensions.dart';
 import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
@@ -16,7 +17,7 @@ class FlutterWebReadySlide extends FlutterDeckSlideWidget {
     final colorScheme = Theme.of(context).colorScheme;
     return FlutterDeckSlide.blank(
       builder: (context) => Padding(
-        padding: const EdgeInsets.all(48),
+        padding: const EdgeInsets.all(SlideDimensions.screenPadding),
         child: Row(
           children: [
             // 左側: テキスト
@@ -24,7 +25,7 @@ class FlutterWebReadySlide extends FlutterDeckSlideWidget {
               flex: 4,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 24.0,
+                spacing: SlideDimensions.itemSpacing,
                 children: [
                   Text(
                     'Flutter Web活用事例',
@@ -35,7 +36,8 @@ class FlutterWebReadySlide extends FlutterDeckSlideWidget {
                     style: theme.body.copyWith(fontWeight: FontWeight.bold),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 48),
+                    padding: const EdgeInsets.only(
+                        left: SlideDimensions.screenPadding),
                     child: Text(
                       '視聴・配信機能を構築',
                       style: theme.body,
@@ -50,7 +52,8 @@ class FlutterWebReadySlide extends FlutterDeckSlideWidget {
                     style: theme.body.copyWith(fontWeight: FontWeight.bold),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 48),
+                    padding: const EdgeInsets.only(
+                        left: SlideDimensions.screenPadding),
                     child: Text(
                       '既存のJS資産をFlutter Webに統合',
                       style: theme.body,
@@ -59,15 +62,16 @@ class FlutterWebReadySlide extends FlutterDeckSlideWidget {
                 ],
               ),
             ),
-            const SizedBox(width: 24),
+            const SizedBox(width: SlideDimensions.itemSpacing),
             // 右側: 画像
             Expanded(
               flex: 2,
               child: Container(
-                padding: const EdgeInsets.all(24),
+                padding: const EdgeInsets.all(SlideDimensions.cardPadding),
                 decoration: BoxDecoration(
                   color: colorScheme.surface,
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius:
+                      BorderRadius.circular(SlideDimensions.borderRadiusSmall),
                   boxShadow: [
                     BoxShadow(
                       color: colorScheme.shadow.withValues(alpha: 0.1),
@@ -78,19 +82,21 @@ class FlutterWebReadySlide extends FlutterDeckSlideWidget {
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  spacing: 16.0,
+                  spacing: SlideDimensions.smallSpacing,
                   children: [
                     Expanded(
                       child: Container(
                         decoration: BoxDecoration(
                           border: Border.all(
-                            color: colorScheme.outline.withOpacity(0.3),
+                            color: colorScheme.outline.withValues(alpha: 0.3),
                             width: 1,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius:
+                      BorderRadius.circular(SlideDimensions.borderRadiusSmall),
                         ),
                         child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius:
+                      BorderRadius.circular(SlideDimensions.borderRadiusSmall),
                           child: Image.asset(
                             'assets/images/app_whowatch_tv_home.png',
                             fit: BoxFit.contain,
@@ -102,13 +108,15 @@ class FlutterWebReadySlide extends FlutterDeckSlideWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           border: Border.all(
-                            color: colorScheme.outline.withOpacity(0.3),
+                            color: colorScheme.outline.withValues(alpha: 0.3),
                             width: 1,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius:
+                      BorderRadius.circular(SlideDimensions.borderRadiusSmall),
                         ),
                         child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius:
+                      BorderRadius.circular(SlideDimensions.borderRadiusSmall),
                           child: Image.asset(
                             'assets/images/app_whowatch_tv_live.png',
                             fit: BoxFit.contain,

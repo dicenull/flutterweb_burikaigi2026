@@ -1,3 +1,4 @@
+import 'package:burikaigi2026_slide/theme/slide_dimensions.dart';
 import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
@@ -18,22 +19,23 @@ class WebComponentsReferenceSlide extends FlutterDeckSlideWidget {
     final colorScheme = Theme.of(context).colorScheme;
     return FlutterDeckSlide.blank(
       builder: (context) => Padding(
-        padding: const EdgeInsets.all(48),
+        padding: const EdgeInsets.all(SlideDimensions.screenPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
-          spacing: 32.0,
+          spacing: SlideDimensions.sectionSpacing,
           children: [
             Text(
               '詳細はZennの記事をご覧ください',
               style: slideTheme.heading,
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: SlideDimensions.itemSpacing),
             Container(
-              padding: const EdgeInsets.all(32),
+              padding: const EdgeInsets.all(SlideDimensions.sectionSpacing),
               decoration: BoxDecoration(
                 color: colorScheme.surfaceContainerHighest,
-                borderRadius: BorderRadius.circular(12),
+                borderRadius:
+                    BorderRadius.circular(SlideDimensions.borderRadiusLarge),
                 border: Border.all(
                   color: colorScheme.primary,
                   width: 2,
@@ -41,7 +43,7 @@ class WebComponentsReferenceSlide extends FlutterDeckSlideWidget {
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 16.0,
+                spacing: SlideDimensions.smallSpacing,
                 children: [
                   Text(
                     '🤝 Flutter Webからウェブコンポーネントを使う',
@@ -51,7 +53,7 @@ class WebComponentsReferenceSlide extends FlutterDeckSlideWidget {
                       color: colorScheme.primary,
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: SlideDimensions.smallSpacing),
                   GestureDetector(
                     onTap: () {
                       if (kIsWeb) {
@@ -70,16 +72,17 @@ class WebComponentsReferenceSlide extends FlutterDeckSlideWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: SlideDimensions.itemSpacing),
                   Container(
-                    padding: const EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(SlideDimensions.smallSpacing),
                     decoration: BoxDecoration(
                       color: colorScheme.surface,
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(
+                          SlideDimensions.borderRadiusSmall),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      spacing: 12.0,
+                      spacing: SlideDimensions.tinySpacing + 4,
                       children: [
                         Text(
                           '記事の内容',
@@ -88,10 +91,11 @@ class WebComponentsReferenceSlide extends FlutterDeckSlideWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 24),
+                          padding: const EdgeInsets.only(
+                              left: SlideDimensions.cardPadding),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            spacing: 8.0,
+                            spacing: SlideDimensions.tinySpacing,
                             children: [
                               Text(
                                 '• Web Componentsの基本概念',

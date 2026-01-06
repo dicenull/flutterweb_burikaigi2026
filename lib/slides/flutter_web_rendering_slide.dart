@@ -1,3 +1,4 @@
+import 'package:burikaigi2026_slide/theme/slide_dimensions.dart';
 import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
@@ -16,10 +17,10 @@ class FlutterWebRenderingSlide extends FlutterDeckSlideWidget {
     final colorScheme = Theme.of(context).colorScheme;
     return FlutterDeckSlide.blank(
       builder: (context) => Padding(
-        padding: const EdgeInsets.all(48),
+        padding: const EdgeInsets.all(SlideDimensions.screenPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: 32.0,
+          spacing: SlideDimensions.sectionSpacing,
           children: [
             Text(
               'Flutter Webのレンダリング方式比較',
@@ -29,7 +30,7 @@ class FlutterWebRenderingSlide extends FlutterDeckSlideWidget {
               child: SingleChildScrollView(
                 child: Table(
                   border: TableBorder.all(
-                    color: colorScheme.outline.withOpacity(0.3),
+                    color: colorScheme.outline.withValues(alpha: 0.3),
                     width: 1,
                   ),
                   columnWidths: const {
@@ -154,10 +155,10 @@ class _TableCell extends StatelessWidget {
       decoration: isHighlighted && !isHeader
           ? BoxDecoration(
               color: isWarning
-                  ? colorScheme.errorContainer.withOpacity(0.3)
+                  ? colorScheme.errorContainer.withValues(alpha: 0.3)
                   : isBest
-                      ? colorScheme.primaryContainer.withOpacity(0.3)
-                      : colorScheme.primaryContainer.withOpacity(0.2),
+                      ? colorScheme.primaryContainer.withValues(alpha: 0.3)
+                      : colorScheme.primaryContainer.withValues(alpha: 0.2),
             )
           : null,
       child: Text(
@@ -182,10 +183,10 @@ class FlutterWebRenderingConclusionSlide extends FlutterDeckSlideWidget {
     final colorScheme = Theme.of(context).colorScheme;
     return FlutterDeckSlide.blank(
       builder: (context) => Padding(
-        padding: const EdgeInsets.all(48),
+        padding: const EdgeInsets.all(SlideDimensions.screenPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: 32.0,
+          spacing: SlideDimensions.sectionSpacing,
           children: [
             Text(
               'レンダリング方式の選択',
@@ -264,7 +265,7 @@ class _RecommendationCard extends StatelessWidget {
         color: isDeprecated
             ? colorScheme.surfaceContainerHighest
             : isRecommended
-                ? colorScheme.primaryContainer.withOpacity(0.3)
+                ? colorScheme.primaryContainer.withValues(alpha: 0.3)
                 : colorScheme.surfaceContainerHighest,
         borderRadius: BorderRadius.circular(12),
         border: isRecommended
@@ -286,7 +287,7 @@ class _RecommendationCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: 48,
                     color: isDeprecated
-                        ? colorScheme.onSurface.withOpacity(0.4)
+                        ? colorScheme.onSurface.withValues(alpha: 0.4)
                         : isRecommended
                             ? colorScheme.primary
                             : colorScheme.onSurface,
@@ -308,7 +309,7 @@ class _RecommendationCard extends StatelessWidget {
               fontSize: 36,
               color: isDeprecated
                   ? colorScheme.error
-                  : colorScheme.onSurface.withOpacity(0.7),
+                  : colorScheme.onSurface.withValues(alpha: 0.7),
             ),
           ),
           const SizedBox(height: 16),

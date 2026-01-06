@@ -1,3 +1,4 @@
+import 'package:burikaigi2026_slide/theme/slide_dimensions.dart';
 import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
 import 'package:burikaigi2026_slide/widgets/code_block.dart';
 import 'package:flutter/material.dart';
@@ -17,10 +18,10 @@ class WebComponentsRegisterSlide extends FlutterDeckSlideWidget {
     final slideTheme = context.slideTextTheme;
     return FlutterDeckSlide.blank(
       builder: (context) => Padding(
-        padding: const EdgeInsets.all(48),
+        padding: const EdgeInsets.all(SlideDimensions.screenPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: 24.0,
+          spacing: SlideDimensions.itemSpacing,
           children: [
             Text(
               '1. PlatformViewRegistryで登録',
@@ -54,7 +55,7 @@ void registerWebComponent() {
                       ),
                     ),
                   ),
-                  const SizedBox(width: 24),
+                  const SizedBox(width: SlideDimensions.itemSpacing),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,12 +66,13 @@ void registerWebComponent() {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        const SizedBox(height: 12),
+                        const SizedBox(height: SlideDimensions.tinySpacing + 4),
                         Padding(
-                          padding: const EdgeInsets.only(left: 24),
+                          padding: const EdgeInsets.only(
+                              left: SlideDimensions.cardPadding),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            spacing: 12.0,
+                            spacing: SlideDimensions.tinySpacing + 4,
                             children: [
                               Text(
                                 '• 文字列でIDを指定',

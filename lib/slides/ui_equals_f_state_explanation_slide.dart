@@ -1,3 +1,4 @@
+import 'package:burikaigi2026_slide/theme/slide_dimensions.dart';
 import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
@@ -15,10 +16,10 @@ class UiEqualsFStateExplanationSlide extends FlutterDeckSlideWidget {
     final theme = context.slideTextTheme;
     return FlutterDeckSlide.blank(
       builder: (context) => Padding(
-        padding: const EdgeInsets.all(48),
+        padding: const EdgeInsets.all(SlideDimensions.screenPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: 32.0,
+          spacing: SlideDimensions.sectionSpacing,
           children: [
             Text(
               'UI = f(state) ',
@@ -29,10 +30,11 @@ class UiEqualsFStateExplanationSlide extends FlutterDeckSlideWidget {
               style: theme.body.copyWith(fontWeight: FontWeight.bold),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 48),
+              padding:
+                  const EdgeInsets.only(left: SlideDimensions.screenPadding),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 32.0,
+                spacing: SlideDimensions.sectionSpacing,
                 children: [
                   Text(
                     '同じ状態なら、常に同じUIが表示される',
@@ -54,10 +56,11 @@ class UiEqualsFStateExplanationSlide extends FlutterDeckSlideWidget {
               style: theme.body.copyWith(fontWeight: FontWeight.bold),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 48),
+              padding:
+                  const EdgeInsets.only(left: SlideDimensions.screenPadding),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 32.0,
+                spacing: SlideDimensions.sectionSpacing,
                 children: [
                   Text(
                     '「何を」表示するかを記述する',
@@ -67,7 +70,8 @@ class UiEqualsFStateExplanationSlide extends FlutterDeckSlideWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 48),
+              padding:
+                  const EdgeInsets.only(left: SlideDimensions.screenPadding),
               child: Text(
                 '状態が変わると、UIが更新される',
                 style: theme.body,

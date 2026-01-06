@@ -1,3 +1,4 @@
+import 'package:burikaigi2026_slide/theme/slide_dimensions.dart';
 import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
@@ -15,16 +16,16 @@ class SelfIntroductionSlide extends FlutterDeckSlideWidget {
     final theme = context.slideTextTheme;
     final colorScheme = Theme.of(context).colorScheme;
     final labelStyle = theme.body.copyWith(
-      color: colorScheme.onSurface.withOpacity(0.6),
+      color: colorScheme.onSurface.withValues(alpha: 0.6),
     );
     return FlutterDeckSlide.blank(
       builder: (context) => Center(
         child: Padding(
-          padding: const EdgeInsets.all(48),
+          padding: const EdgeInsets.all(SlideDimensions.screenPadding),
           child: Row(
             children: [
               Image.asset('assets/images/icon.png'),
-              const SizedBox(width: 48),
+              const SizedBox(width: SlideDimensions.screenPadding),
               Expanded(
                 child: RichText(
                   text: TextSpan(

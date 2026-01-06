@@ -1,3 +1,4 @@
+import 'package:burikaigi2026_slide/theme/slide_dimensions.dart';
 import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
 import 'package:burikaigi2026_slide/widgets/code_block.dart';
 import 'package:flutter/material.dart';
@@ -14,13 +15,12 @@ class WasmBuildSlide extends FlutterDeckSlideWidget {
   @override
   Widget build(BuildContext context) {
     final slideTheme = context.slideTextTheme;
-    final colorScheme = Theme.of(context).colorScheme;
     return FlutterDeckSlide.blank(
       builder: (context) => Padding(
-        padding: const EdgeInsets.all(48),
+        padding: const EdgeInsets.all(SlideDimensions.screenPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: 32.0,
+          spacing: SlideDimensions.sectionSpacing,
           children: [
             Text(
               'WASMビルドを試す',
@@ -30,7 +30,7 @@ class WasmBuildSlide extends FlutterDeckSlideWidget {
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  spacing: 24.0,
+                  spacing: SlideDimensions.itemSpacing,
                   children: [
                     Text(
                       'ビルド',
@@ -41,7 +41,7 @@ class WasmBuildSlide extends FlutterDeckSlideWidget {
                     const SimpleCodeBlock(
                       text: 'flutter build web --wasm',
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: SlideDimensions.smallSpacing),
                     Text(
                       'ビルド後のファイル',
                       style: slideTheme.body.copyWith(
@@ -49,10 +49,11 @@ class WasmBuildSlide extends FlutterDeckSlideWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 48),
+                      padding: const EdgeInsets.only(
+                          left: SlideDimensions.screenPadding),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        spacing: 12.0,
+                        spacing: SlideDimensions.tinySpacing + 4,
                         children: [
                           Text(
                             '• main.dart.js: Dartコード（JavaScript）',

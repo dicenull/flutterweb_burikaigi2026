@@ -1,3 +1,4 @@
+import 'package:burikaigi2026_slide/theme/slide_dimensions.dart';
 import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
 import 'package:burikaigi2026_slide/widgets/code_block.dart';
 import 'package:flutter/material.dart';
@@ -17,10 +18,10 @@ class FlutterWebSeoSlide extends FlutterDeckSlideWidget {
     final colorScheme = Theme.of(context).colorScheme;
     return FlutterDeckSlide.blank(
       builder: (context) => Padding(
-        padding: const EdgeInsets.all(48),
+        padding: const EdgeInsets.all(SlideDimensions.screenPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: 32.0,
+          spacing: SlideDimensions.sectionSpacing,
           children: [
             Text(
               'Flutter WebとSEO',
@@ -33,18 +34,18 @@ class FlutterWebSeoSlide extends FlutterDeckSlideWidget {
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      spacing: 32.0,
+                      spacing: SlideDimensions.sectionSpacing,
                       children: [
                         Text(
                           '公式推奨のアプローチ',
-                          style:
-                              theme.body.copyWith(fontWeight: FontWeight.bold),
+                          style: theme.body.copyWith(fontWeight: FontWeight.bold),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 24),
+                          padding: const EdgeInsets.only(
+                              left: SlideDimensions.itemSpacing),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            spacing: 24.0,
+                            spacing: SlideDimensions.itemSpacing,
                             children: [
                               Text(
                                 'index.htmlにmetaタグを設定',
@@ -54,7 +55,7 @@ class FlutterWebSeoSlide extends FlutterDeckSlideWidget {
                                 text:
                                     '<meta name="description" content="...">\n<meta property="og:title" content="...">',
                               ),
-                              const SizedBox(height: 8),
+                              const SizedBox(height: SlideDimensions.tinySpacing),
                               Text('別途SEO対応ページを作成、\nFlutter Webに誘導',
                                   style: theme.body),
                             ],
@@ -63,18 +64,19 @@ class FlutterWebSeoSlide extends FlutterDeckSlideWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(width: 24),
+                  const SizedBox(width: SlideDimensions.itemSpacing),
                   Expanded(
                     child: Container(
-                      padding: const EdgeInsets.all(24),
+                      padding: const EdgeInsets.all(SlideDimensions.cardPadding),
                       decoration: BoxDecoration(
                         color: colorScheme.surfaceContainerHighest,
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius:
+                            BorderRadius.circular(SlideDimensions.borderRadiusSmall),
                       ),
                       child: SingleChildScrollView(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          spacing: 16.0,
+                          spacing: SlideDimensions.smallSpacing,
                           children: [
                             Text(
                               '公式ドキュメントより',
@@ -104,7 +106,7 @@ class FlutterWebSeoSlide extends FlutterDeckSlideWidget {
                                 ],
                               ),
                             ),
-                            const SizedBox(height: 8),
+                            const SizedBox(height: SlideDimensions.tinySpacing),
                             SelectableText(
                               'https://docs.flutter.dev/platform-integration/web/faq',
                               style: theme.body.copyWith(
