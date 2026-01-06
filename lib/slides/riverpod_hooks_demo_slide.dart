@@ -1,5 +1,6 @@
 import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
 import 'package:burikaigi2026_slide/widgets/code_demo_slide.dart';
+import 'package:burikaigi2026_slide/widgets/counter_demo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
@@ -25,7 +26,7 @@ class RiverpodHooksDemoSlide extends FlutterDeckSlideWidget {
             colorScheme: colorScheme,
           ),
         ),
-        demoContent: const _RiverpodHooksCounterDemo(),
+        demoContent: const CounterDemo(),
       ),
     );
   }
@@ -46,7 +47,7 @@ class RiverpodHooksCounter extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // Providerから状態を取得
     final counter = ref.watch(counterProvider);
-    
+
     // カウンターを増やす関数
     final increment = () {
       ref.read(counterProvider.notifier).state++;
@@ -72,45 +73,4 @@ class RiverpodHooksCounter extends HookConsumerWidget {
     );
   }
 }''';
-}
-
-// RiverpodHooksを使ったカウンターアプリのデモ
-class _RiverpodHooksCounterDemo extends StatefulWidget {
-  const _RiverpodHooksCounterDemo();
-
-  @override
-  State<_RiverpodHooksCounterDemo> createState() =>
-      _RiverpodHooksCounterDemoState();
-}
-
-class _RiverpodHooksCounterDemoState extends State<_RiverpodHooksCounterDemo> {
-  int _counter = 0;
-
-  void _increment() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          spacing: 32.0,
-          children: [
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.displayLarge,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton.large(
-        onPressed: _increment,
-        child: const Icon(Icons.add),
-      ),
-    );
-  }
 }

@@ -1,4 +1,5 @@
 import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
+import 'package:burikaigi2026_slide/widgets/info_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
@@ -31,12 +32,11 @@ class WasmBuildFilesFlowSlide extends FlutterDeckSlideWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   // flutter.js
-                  _CompactFileCard(
+                  const InfoCard(
                     title: 'flutter.js',
-                    description: 'WASMサポート判定',
-                    details: 'dart2wasmコンパイル、WasmGCを確認',
-                    colorScheme: colorScheme,
-                    theme: slideTheme,
+                    subtitle: 'WASMサポート判定',
+                    description: 'dart2wasmコンパイル、WasmGCを確認',
+                    size: InfoCardSize.compact,
                   ),
                   const SizedBox(height: 16),
                   // 矢印
@@ -53,7 +53,7 @@ class WasmBuildFilesFlowSlide extends FlutterDeckSlideWidget {
                       vertical: 12,
                     ),
                     decoration: BoxDecoration(
-                      color: colorScheme.primaryContainer.withOpacity(0.3),
+                      color: colorScheme.primaryContainer.withValues(alpha: 0.3),
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
                         color: colorScheme.primary,
@@ -94,13 +94,13 @@ class WasmBuildFilesFlowSlide extends FlutterDeckSlideWidget {
                               ),
                             ),
                             const SizedBox(height: 8),
-                            _CompactFileCard(
+                            const InfoCard(
                               title: 'main.dart.wasm',
-                              description: 'WASMビルドを読み込み',
-                              details: '約1.9MB',
-                              colorScheme: colorScheme,
-                              theme: slideTheme,
+                              subtitle: 'WASMビルドを読み込み',
+                              description: '約1.9MB',
+                              size: InfoCardSize.compact,
                               isHighlighted: true,
+                              highlightIcon: Icons.star,
                             ),
                           ],
                         ),
@@ -123,12 +123,11 @@ class WasmBuildFilesFlowSlide extends FlutterDeckSlideWidget {
                               ),
                             ),
                             const SizedBox(height: 8),
-                            _CompactFileCard(
+                            const InfoCard(
                               title: 'main.dart.js',
-                              description: 'JSビルドを読み込み',
-                              details: '約2.4MB',
-                              colorScheme: colorScheme,
-                              theme: slideTheme,
+                              subtitle: 'JSビルドを読み込み',
+                              description: '約2.4MB',
+                              size: InfoCardSize.compact,
                             ),
                           ],
                         ),
@@ -140,172 +139,6 @@ class WasmBuildFilesFlowSlide extends FlutterDeckSlideWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class _CompactFileCard extends StatelessWidget {
-  const _CompactFileCard({
-    required this.title,
-    required this.description,
-    required this.details,
-    required this.colorScheme,
-    required this.theme,
-    this.isHighlighted = false,
-  });
-
-  final String title;
-  final String description;
-  final String details;
-  final ColorScheme colorScheme;
-  final SlideTextTheme theme;
-  final bool isHighlighted;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: isHighlighted
-            ? colorScheme.primaryContainer.withOpacity(0.3)
-            : colorScheme.surfaceContainerHighest,
-        borderRadius: BorderRadius.circular(8),
-        border: isHighlighted
-            ? Border.all(
-                color: colorScheme.primary,
-                width: 2,
-              )
-            : null,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: 8.0,
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Text(
-                  title,
-                  style: theme.body.copyWith(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 36,
-                    color: isHighlighted
-                        ? colorScheme.primary
-                        : colorScheme.onSurface,
-                  ),
-                ),
-              ),
-              if (isHighlighted)
-                Icon(
-                  Icons.star,
-                  color: colorScheme.primary,
-                  size: 24,
-                ),
-            ],
-          ),
-          Text(
-            description,
-            style: theme.body.copyWith(
-              fontSize: 32,
-              color: colorScheme.onSurface.withOpacity(0.7),
-            ),
-          ),
-          Text(
-            details,
-            style: theme.body.copyWith(
-              fontSize: 28,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _FileCard extends StatelessWidget {
-  const _FileCard({
-    required this.title,
-    required this.description,
-    required this.details,
-    required this.colorScheme,
-    required this.theme,
-    this.isHighlighted = false,
-  });
-
-  final String title;
-  final String description;
-  final List<String> details;
-  final ColorScheme colorScheme;
-  final SlideTextTheme theme;
-  final bool isHighlighted;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(24),
-      decoration: BoxDecoration(
-        color: isHighlighted
-            ? colorScheme.primaryContainer.withOpacity(0.3)
-            : colorScheme.surfaceContainerHighest,
-        borderRadius: BorderRadius.circular(12),
-        border: isHighlighted
-            ? Border.all(
-                color: colorScheme.primary,
-                width: 2,
-              )
-            : null,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: 16.0,
-        children: [
-          Row(
-            children: [
-              Text(
-                title,
-                style: theme.body.copyWith(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 48,
-                  color: isHighlighted
-                      ? colorScheme.primary
-                      : colorScheme.onSurface,
-                ),
-              ),
-              if (isHighlighted) ...[
-                const SizedBox(width: 8),
-                Icon(
-                  Icons.star,
-                  color: colorScheme.primary,
-                  size: 32,
-                ),
-              ],
-            ],
-          ),
-          Text(
-            description,
-            style: theme.body.copyWith(
-              fontSize: 40,
-              color: colorScheme.onSurface.withOpacity(0.7),
-            ),
-          ),
-          const SizedBox(height: 8),
-          Padding(
-            padding: const EdgeInsets.only(left: 24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              spacing: 12.0,
-              children: details
-                  .map((detail) => Text(
-                        '• $detail',
-                        style: theme.body.copyWith(
-                          fontSize: 36,
-                        ),
-                      ))
-                  .toList(),
-            ),
-          ),
-        ],
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
 import 'package:burikaigi2026_slide/widgets/code_demo_slide.dart';
+import 'package:burikaigi2026_slide/widgets/counter_demo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
@@ -25,7 +26,7 @@ class FlutterDemoSlide extends FlutterDeckSlideWidget {
             colorScheme: colorScheme,
           ),
         ),
-        demoContent: const _CounterDemo(),
+        demoContent: const CounterDemo(),
       ),
     );
   }
@@ -67,44 +68,4 @@ class _CounterDemoState extends State<_CounterDemo> {
     );
   }
 }''';
-}
-
-// カウンターアプリのデモ
-class _CounterDemo extends StatefulWidget {
-  const _CounterDemo();
-
-  @override
-  State<_CounterDemo> createState() => _CounterDemoState();
-}
-
-class _CounterDemoState extends State<_CounterDemo> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          spacing: 32.0,
-          children: <Widget>[
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.displayLarge,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton.large(
-        onPressed: _incrementCounter,
-        child: const Icon(Icons.add),
-      ),
-    );
-  }
 }
