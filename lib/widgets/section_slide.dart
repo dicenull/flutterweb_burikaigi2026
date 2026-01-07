@@ -13,11 +13,15 @@ class SectionSlideContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.slideTextTheme;
-    return Center(
-      child: Text(
-        title,
-        style: theme.sectionTitle,
-        textAlign: TextAlign.center,
+    final colorScheme = Theme.of(context).colorScheme;
+    return Container(
+      color: colorScheme.primary,
+      child: Center(
+        child: Text(
+          title,
+          style: theme.sectionTitle.copyWith(color: colorScheme.onPrimary),
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }
