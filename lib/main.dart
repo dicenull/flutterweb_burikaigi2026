@@ -17,6 +17,7 @@ import 'package:burikaigi2026_slide/slides/wasm_build_files_slide.dart';
 import 'package:burikaigi2026_slide/slides/wasm_build_slide.dart';
 import 'package:burikaigi2026_slide/slides/wasm_rendering_slide.dart';
 import 'package:burikaigi2026_slide/slides/wasm_section_slide.dart';
+import 'package:burikaigi2026_slide/slides/wasm_webcomponents_warning_slide.dart';
 import 'package:burikaigi2026_slide/slides/webcomponents_communication_slide.dart';
 import 'package:burikaigi2026_slide/slides/webcomponents_display_slide.dart';
 import 'package:burikaigi2026_slide/slides/webcomponents_embed_slide.dart';
@@ -103,6 +104,7 @@ void main() {
         WasmRenderingSlide(),
         WasmBuildSlide(),
         WasmBuildFilesFlowSlide(),
+        WasmWebComponentsWarningSlide(),
       ],
     ),
   ));
