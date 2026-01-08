@@ -22,7 +22,7 @@ class RiverpodHooksIntroSlide extends FlutterDeckSlideWidget {
           spacing: SlideDimensions.sectionSpacing,
           children: [
             Text(
-              'パッケージ (pub.dev)で拡張できる',
+              'パッケージ (pub.dev)で新機能を追加できる',
               style: theme.heading,
             ),
             Text(
