@@ -199,7 +199,7 @@ class _CommunicationDemoState extends State<_CommunicationDemo> {
         // 表示エリア
         final display = web.HTMLDivElement()
           ..id = 'display'
-          ..text = 'Flutterからの値: なし'
+          ..textContent = 'Flutterからの値: なし'
           ..style.padding = '8px'
           ..style.border = '1px solid #ccc'
           ..style.borderRadius = '4px';
@@ -216,7 +216,7 @@ class _CommunicationDemoState extends State<_CommunicationDemo> {
 
         // ボタン
         final button = web.HTMLButtonElement()
-          ..text = 'Flutterに送信'
+          ..textContent = 'Flutterに送信'
           ..style.padding = '8px 16px'
           ..style.border = 'none'
           ..style.borderRadius = '4px'
@@ -262,7 +262,7 @@ class _CommunicationDemoState extends State<_CommunicationDemo> {
     // Flutter → WC: プロパティを設定
     final display = web.document.getElementById('display');
     if (display != null) {
-      display.text = 'Flutterからの値: $value';
+      display.textContent = 'Flutterからの値: $value';
     }
   }
 
