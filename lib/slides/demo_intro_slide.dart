@@ -19,7 +19,7 @@ class DemoIntroSlide extends FlutterDeckSlideWidget {
         padding: const EdgeInsets.all(SlideDimensions.screenPadding),
         child: Center(
           child: Text(
-            '次はカウンターコードのデモです',
+            '次はコードで解説します→',
             style: theme.title,
           ),
         ),

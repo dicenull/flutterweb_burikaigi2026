@@ -35,7 +35,7 @@ class RiverpodHooksIntroSlide extends FlutterDeckSlideWidget {
             ),
             const SizedBox(height: SlideDimensions.screenPadding),
             Text(
-              'Riverpod × HooksでReactっぽく書ける',
+              'Riverpod × HooksパッケージでReactっぽく書ける',
               style: theme.body.copyWith(fontWeight: FontWeight.bold),
             ),
             Padding(
@@ -47,10 +47,6 @@ class RiverpodHooksIntroSlide extends FlutterDeckSlideWidget {
                 children: [
                   Text(
                     '状態管理がシンプル',
-                    style: theme.body,
-                  ),
-                  Text(
-                    '関数型コンポーネント風',
                     style: theme.body,
                   ),
                   Text(

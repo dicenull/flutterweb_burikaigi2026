@@ -32,7 +32,7 @@ class SummarySlide extends FlutterDeckSlideWidget {
                   spacing: SlideDimensions.itemSpacing,
                   children: [
                     Text(
-                      'Flutter Web',
+                      'Flutter',
                       style: theme.body.copyWith(fontWeight: FontWeight.bold),
                     ),
                     Padding(

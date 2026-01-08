@@ -17,7 +17,6 @@ import 'package:burikaigi2026_slide/slides/title_main_slide.dart';
 import 'package:burikaigi2026_slide/slides/toc_slide.dart';
 import 'package:burikaigi2026_slide/slides/ui_equals_f_state_explanation_slide.dart';
 import 'package:burikaigi2026_slide/slides/ui_equals_f_state_slide.dart';
-import 'package:burikaigi2026_slide/slides/widget_tree_slide.dart';
 import 'package:burikaigi2026_slide/slides/wasm_build_files_slide.dart';
 import 'package:burikaigi2026_slide/slides/wasm_build_slide.dart';
 import 'package:burikaigi2026_slide/slides/wasm_rendering_slide.dart';
@@ -31,6 +30,7 @@ import 'package:burikaigi2026_slide/slides/webcomponents_register_slide.dart';
 import 'package:burikaigi2026_slide/slides/webcomponents_section_slide.dart';
 import 'package:burikaigi2026_slide/slides/what_is_flutter_slide.dart';
 import 'package:burikaigi2026_slide/slides/why_webcomponents_slide.dart';
+import 'package:burikaigi2026_slide/slides/widget_tree_slide.dart';
 import 'package:burikaigi2026_slide/theme/slide_text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -95,8 +95,8 @@ void main() {
         RiverpodHooksDemoSlide(),
         FlutterWebSectionSlide(),
         FlutterWebIntroSlide(),
-        FlutterWebRenderingSlide(),
         FlutterWebRenderingConclusionSlide(),
+        FlutterWebRenderingSlide(),
         FlutterWebSeoSlide(),
         FlutterWebPwaSlide(),
         FlutterWebPwaServiceWorkerSlide(),
