@@ -1,3 +1,4 @@
+import 'package:burikaigi2026_slide/slides/demo_intro_slide.dart';
 import 'package:burikaigi2026_slide/slides/flutter_demo_slide.dart';
 import 'package:burikaigi2026_slide/slides/flutter_history_slide.dart';
 import 'package:burikaigi2026_slide/slides/flutter_multiplatform_slide.dart';
@@ -86,6 +87,7 @@ void main() {
         FlutterHistorySlide(),
         UiEqualsFStateSlide(),
         UiEqualsFStateExplanationSlide(),
+        DemoIntroSlide(),
         FlutterDemoSlide(),
         RiverpodHooksIntroSlide(),
         RiverpodHooksDemoSlide(),
