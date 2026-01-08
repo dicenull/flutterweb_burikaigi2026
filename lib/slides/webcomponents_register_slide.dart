@@ -28,7 +28,7 @@ class WebComponentsRegisterSlide extends FlutterDeckSlideWidget {
               style: slideTheme.heading,
             ),
             Text(
-              'Web ComponentをFlutterに登録',
+              'WebComponentsをFlutterに登録',
               style: slideTheme.body.copyWith(fontWeight: FontWeight.bold),
             ),
             Expanded(

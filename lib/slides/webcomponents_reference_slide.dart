@@ -98,7 +98,7 @@ class WebComponentsReferenceSlide extends FlutterDeckSlideWidget {
                             spacing: SlideDimensions.tinySpacing,
                             children: [
                               Text(
-                                '• Web Componentsの基本概念',
+                                '• WebComponentsの基本概念',
                                 style: slideTheme.body,
                               ),
                               Text(

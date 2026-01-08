@@ -24,7 +24,7 @@ class WebComponentsEmbedSlide extends FlutterDeckSlideWidget {
           spacing: SlideDimensions.sectionSpacing,
           children: [
             Text(
-              'Web Componentsとの連携',
+              'WebComponentsとの連携',
               style: slideTheme.heading,
             ),
             Expanded(
@@ -46,7 +46,7 @@ class WebComponentsEmbedSlide extends FlutterDeckSlideWidget {
                         spacing: SlideDimensions.smallSpacing,
                         children: [
                           Text(
-                            '1. PlatformViewRegistryでWeb Componentを登録',
+                            '1. PlatformViewRegistryでWebComponentsを登録',
                             style: slideTheme.body,
                           ),
                           Text(

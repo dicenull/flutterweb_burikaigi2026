@@ -57,7 +57,7 @@ class WebComponentsCommunicationSlide extends FlutterDeckSlideWidget {
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:flutter/material.dart';
 
-// 1. Web Componentを登録
+// 1. WebComponentsを登録
 void registerWebComponent() {
   PlatformViewRegistry.registerViewFactory(
     'communication-demo',
@@ -75,7 +75,7 @@ void registerWebComponent() {
       // 入力フィールド
       final input = web.HTMLInputElement()
         ..type = 'text'
-        ..placeholder = 'Web Componentから入力';
+        ..placeholder = 'WebComponentsから入力';
       container.append(input);
       
       // ボタン
@@ -145,7 +145,7 @@ class _CommunicationDemoState extends State<_CommunicationDemo> {
             ),
           ),
           const SizedBox(height: 16),
-          Text('Web Componentからの値: \$_wcValue'),
+          Text('WebComponentsからの値: \$_wcValue'),
           const SizedBox(height: 16),
           ElevatedButton(
             onPressed: () {
@@ -208,7 +208,7 @@ class _CommunicationDemoState extends State<_CommunicationDemo> {
         // 入力フィールド
         final input = web.HTMLInputElement()
           ..type = 'text'
-          ..placeholder = 'Web Componentから入力'
+          ..placeholder = 'WebComponentsから入力'
           ..style.padding = '8px'
           ..style.border = '1px solid #ccc'
           ..style.borderRadius = '4px';
@@ -281,7 +281,7 @@ class _CommunicationDemoState extends State<_CommunicationDemo> {
           mainAxisAlignment: MainAxisAlignment.center,
           spacing: SlideDimensions.itemSpacing,
           children: [
-            // Web Componentゾーン
+            // WebComponentsゾーン
             Container(
               padding: const EdgeInsets.all(SlideDimensions.smallPadding),
               decoration: BoxDecoration(
@@ -294,7 +294,7 @@ class _CommunicationDemoState extends State<_CommunicationDemo> {
               child: Column(
                 children: [
                   Text(
-                    'Web Component',
+                    'WebComponents',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           color: colorScheme.primary,
                           fontWeight: FontWeight.bold,
@@ -332,7 +332,7 @@ class _CommunicationDemoState extends State<_CommunicationDemo> {
                   ),
                   const SizedBox(height: SlideDimensions.tinySpacing),
                   Text(
-                    'Web Componentからの値: $_wcValue',
+                    'WebComponentsからの値: $_wcValue',
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
                   const SizedBox(height: SlideDimensions.tinySpacing),

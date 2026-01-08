@@ -92,7 +92,7 @@ backgroundColor: #EEEEEE
 - 詳細は弊社のエンジニアブログ（Zenn）で公開中！
 
 > **参考記事:**
-> [Flutter WebでWeb Componentsを活用する](https://zenn.dev/jigjp_engineer/articles/cc7fbc31d045d)
+> [Flutter WebでWebComponentsを活用する](https://zenn.dev/jigjp_engineer/articles/cc7fbc31d045d)
 
 ---
 
