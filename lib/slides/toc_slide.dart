@@ -24,15 +24,15 @@ class TocSlide extends FlutterDeckSlideWidget {
               style: theme.title,
             ),
             ...[
-              'Flutterとは',
-              'Flutter Webとは',
+              'Flutter マルチプラットフォーム',
+              'WebとFlutter',
               'WebComponentsとFlutter',
               'WebAssembly (WASM)とFlutter',
               'まとめ'
             ].asMap().entries.map(
                   (entry) => Padding(
-                    padding:
-                        const EdgeInsets.only(bottom: SlideDimensions.itemSpacing),
+                    padding: const EdgeInsets.only(
+                        bottom: SlideDimensions.itemSpacing),
                     child: Text(
                       '${entry.key + 1}. ${entry.value}',
                       style: theme.tocItem,

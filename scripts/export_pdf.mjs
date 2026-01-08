@@ -20,6 +20,7 @@ const SLIDE_ROUTES = [
   '/flutter-demo',
   '/riverpod-hooks-intro',
   '/riverpod-hooks-demo',
+  '/flutter-web-section',
   '/flutter-web-intro',
   '/flutter-web-rendering',
   '/flutter-web-rendering-conclusion',
