@@ -48,7 +48,7 @@ class WhyWebComponentsSlide extends FlutterDeckSlideWidget {
               ),
             ),
             Text(
-              'WCの作り方:',
+              'WCの作り方',
               style: theme.body.copyWith(fontWeight: FontWeight.bold),
             ),
             Padding(

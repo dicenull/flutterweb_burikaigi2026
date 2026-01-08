@@ -55,7 +55,7 @@ class FlutterWebReadySlide extends FlutterDeckSlideWidget {
                     padding: const EdgeInsets.only(
                         left: SlideDimensions.screenPadding),
                     child: Text(
-                      '既存のJS資産をFlutter Webに統合',
+                      '既存のJavaScript(JS)資産をFlutter Webに統合',
                       style: theme.body,
                     ),
                   ),
@@ -88,15 +88,16 @@ class FlutterWebReadySlide extends FlutterDeckSlideWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           border: Border.all(
-                            color: colorScheme.outline.withValues(alpha: SlideDimensions.alphaHigh),
+                            color: colorScheme.outline
+                                .withValues(alpha: SlideDimensions.alphaHigh),
                             width: SlideDimensions.borderWidthNormal,
                           ),
-                          borderRadius:
-                      BorderRadius.circular(SlideDimensions.borderRadiusSmall),
+                          borderRadius: BorderRadius.circular(
+                              SlideDimensions.borderRadiusSmall),
                         ),
                         child: ClipRRect(
-                          borderRadius:
-                      BorderRadius.circular(SlideDimensions.borderRadiusSmall),
+                          borderRadius: BorderRadius.circular(
+                              SlideDimensions.borderRadiusSmall),
                           child: Image.asset(
                             'assets/images/app_whowatch_tv_home.png',
                             fit: BoxFit.contain,
@@ -108,15 +109,16 @@ class FlutterWebReadySlide extends FlutterDeckSlideWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           border: Border.all(
-                            color: colorScheme.outline.withValues(alpha: SlideDimensions.alphaHigh),
+                            color: colorScheme.outline
+                                .withValues(alpha: SlideDimensions.alphaHigh),
                             width: SlideDimensions.borderWidthNormal,
                           ),
-                          borderRadius:
-                      BorderRadius.circular(SlideDimensions.borderRadiusSmall),
+                          borderRadius: BorderRadius.circular(
+                              SlideDimensions.borderRadiusSmall),
                         ),
                         child: ClipRRect(
-                          borderRadius:
-                      BorderRadius.circular(SlideDimensions.borderRadiusSmall),
+                          borderRadius: BorderRadius.circular(
+                              SlideDimensions.borderRadiusSmall),
                           child: Image.asset(
                             'assets/images/app_whowatch_tv_live.png',
                             fit: BoxFit.contain,

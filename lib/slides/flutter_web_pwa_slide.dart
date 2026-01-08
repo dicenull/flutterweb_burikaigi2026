@@ -129,7 +129,7 @@ class FlutterWebPwaServiceWorkerSlide extends FlutterDeckSlideWidget {
                     child: InfoCard(
                       title: 'online-first',
                       subtitle: '常に最新データが必要な場合',
-                      description: 'オンライン優先。ネットワークを優先的に使用',
+                      description: 'オンライン優先。\nネットワークを優先的に使用',
                     ),
                   ),
                   const SizedBox(width: SlideDimensions.itemSpacing),

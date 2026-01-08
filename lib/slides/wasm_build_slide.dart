@@ -33,7 +33,7 @@ class WasmBuildSlide extends FlutterDeckSlideWidget {
                   spacing: SlideDimensions.itemSpacing,
                   children: [
                     Text(
-                      'ビルド',
+                      'ビルドはシンプル',
                       style: slideTheme.body.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
