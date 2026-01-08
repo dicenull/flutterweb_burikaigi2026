@@ -27,10 +27,6 @@ class WebComponentsEmbedSlide extends FlutterDeckSlideWidget {
               'Web Componentsとの連携',
               style: slideTheme.heading,
             ),
-            Text(
-              'Flutter WebでWeb Componentsを埋め込む方法',
-              style: slideTheme.body.copyWith(fontWeight: FontWeight.bold),
-            ),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
@@ -66,7 +62,8 @@ class WebComponentsEmbedSlide extends FlutterDeckSlideWidget {
                     ),
                     const SizedBox(height: SlideDimensions.smallSpacing),
                     Container(
-                      padding: const EdgeInsets.all(SlideDimensions.cardPadding),
+                      padding:
+                          const EdgeInsets.all(SlideDimensions.cardPadding),
                       decoration: BoxDecoration(
                         color: colorScheme.surfaceContainerHighest,
                         borderRadius: BorderRadius.circular(
@@ -95,10 +92,6 @@ class WebComponentsEmbedSlide extends FlutterDeckSlideWidget {
                                 ),
                                 Text(
                                   '• 既存のJS資産を再利用',
-                                  style: slideTheme.body,
-                                ),
-                                Text(
-                                  '• 双方向通信も可能',
                                   style: slideTheme.body,
                                 ),
                               ],
