@@ -6,6 +6,7 @@ import 'package:burikaigi2026_slide/slides/flutter_web_pwa_slide.dart';
 import 'package:burikaigi2026_slide/slides/flutter_web_ready_slide.dart';
 import 'package:burikaigi2026_slide/slides/flutter_web_rendering_slide.dart';
 import 'package:burikaigi2026_slide/slides/flutter_web_seo_slide.dart';
+import 'package:burikaigi2026_slide/slides/made_with_flutter_slide.dart';
 import 'package:burikaigi2026_slide/slides/riverpod_hooks_demo_slide.dart';
 import 'package:burikaigi2026_slide/slides/riverpod_hooks_intro_slide.dart';
 import 'package:burikaigi2026_slide/slides/self_introduction_slide.dart';
@@ -107,6 +108,7 @@ void main() {
         WasmBuildFilesFlowSlide(),
         WasmWebComponentsWarningSlide(),
         SummarySlide(),
+        MadeWithFlutterSlide(),
       ],
     ),
   ));
