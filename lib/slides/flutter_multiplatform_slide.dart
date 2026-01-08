@@ -14,7 +14,7 @@ class FlutterMultiplatformSlide extends FlutterDeckSlideWidget {
   Widget build(BuildContext context) {
     return FlutterDeckSlide.blank(
       builder: (context) => const SectionSlideContent(
-        title: '1. Flutter マルチプラットフォーム',
+        title: 'Flutter マルチプラットフォーム',
       ),
     );
   }

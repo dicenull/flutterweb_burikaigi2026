@@ -14,7 +14,7 @@ class WasmSectionSlide extends FlutterDeckSlideWidget {
   Widget build(BuildContext context) {
     return FlutterDeckSlide.blank(
       builder: (context) => const SectionSlideContent(
-        title: '3. WebAssembly (WASM) の話',
+        title: 'WebAssembly (WASM)とFlutter',
       ),
     );
   }

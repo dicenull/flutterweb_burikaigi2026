@@ -14,7 +14,7 @@ class FlutterWebSectionSlide extends FlutterDeckSlideWidget {
   Widget build(BuildContext context) {
     return FlutterDeckSlide.blank(
       builder: (context) => const SectionSlideContent(
-        title: '2. Flutter Webの基本',
+        title: 'WebとFlutter',
       ),
     );
   }
