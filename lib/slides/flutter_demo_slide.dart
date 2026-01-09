@@ -21,7 +21,7 @@ class FlutterDemoSlide extends FlutterDeckSlideWidget {
         codeContent: SelectableText.rich(
           HighlightedCodeBuilder.buildHighlightedCode(
             code: _counterCode,
-            highlightedLines: const {11, 12, 13, 14, 24, 25, 30},
+            highlightedLines: const {18, 19, 24, 25, 26, 27, 28, 29},
             theme: theme,
             colorScheme: colorScheme,
           ),
@@ -42,27 +42,26 @@ class FlutterDemoSlide extends FlutterDeckSlideWidget {
 class _CounterDemoState extends State<_CounterDemo> {
   int _counter = 0;
 
-  void _incrementCounter() {
-    // 状態を更新する
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
+            Text('カウント'),
             // 宣言的UI 状態が変わるとUIが更新される
             Text('\$_counter'),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton.large(
-        onPressed: _incrementCounter,
+        onPressed: () {
+          // 状態を更新する
+          setState(() {
+            _counter++;
+          });
+        },
         child: const Icon(Icons.add),
       ),
     );

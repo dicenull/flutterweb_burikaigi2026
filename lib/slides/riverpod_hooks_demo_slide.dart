@@ -21,7 +21,7 @@ class RiverpodHooksDemoSlide extends FlutterDeckSlideWidget {
         codeContent: SelectableText.rich(
           HighlightedCodeBuilder.buildHighlightedCode(
             code: _riverpodHooksCode,
-            highlightedLines: const {5, 14, 17, 18, 35},
+            highlightedLines: const {5, 14, 23, 24, 29, 30, 31, 32},
             theme: theme,
             colorScheme: colorScheme,
           ),
@@ -45,13 +45,8 @@ class RiverpodHooksCounter extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Providerから状態を取得
+    // Providerの状態を監視
     final counter = ref.watch(counterProvider);
-
-    // カウンターを増やす関数
-    final increment = () {
-      ref.read(counterProvider.notifier).state++;
-    };
 
     return Scaffold(
       body: Center(
@@ -59,15 +54,17 @@ class RiverpodHooksCounter extends HookConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           spacing: 32.0,
           children: [
-            Text(
-              '\$counter',
-              style: Theme.of(context).textTheme.displayLarge,
-            ),
+            Text('カウント'),
+            // 状態が変わったら更新される
+            Text('\$counter'),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton.large(
-        onPressed: increment,
+        onPressed: () {
+          // 状態を更新する
+          ref.read(counterProvider.notifier).state++;
+        },
         child: const Icon(Icons.add),
       ),
     );

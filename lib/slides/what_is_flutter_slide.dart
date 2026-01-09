@@ -38,7 +38,8 @@ class WhatIsFlutterSlide extends FlutterDeckSlideWidget {
               style: theme.body.copyWith(fontWeight: FontWeight.bold),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: SlideDimensions.screenPadding),
+              padding:
+                  const EdgeInsets.only(left: SlideDimensions.screenPadding),
               child: Text(
                 '1つのプロジェクトでiOS / Android / Web / Desktopに対応',
                 style: theme.body,
@@ -49,17 +50,14 @@ class WhatIsFlutterSlide extends FlutterDeckSlideWidget {
               style: theme.body.copyWith(fontWeight: FontWeight.bold),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: SlideDimensions.screenPadding),
+              padding:
+                  const EdgeInsets.only(left: SlideDimensions.screenPadding),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: SlideDimensions.sectionSpacing,
                 children: [
                   Text(
                     'プラットフォームごとのUI差分なし',
-                    style: theme.body,
-                  ),
-                  Text(
-                    'パッケージ（pub.dev）が複数のプラットフォームをサポート',
                     style: theme.body,
                   ),
                 ],

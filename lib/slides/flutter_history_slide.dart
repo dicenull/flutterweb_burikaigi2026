@@ -37,6 +37,7 @@ class FlutterHistorySlide extends FlutterDeckSlideWidget {
               '2022年: Flutter 3.0 Desktop Stable',
               style: theme.body.copyWith(fontWeight: FontWeight.bold),
             ),
+            SizedBox(height: SlideDimensions.itemSpacing),
             Text(
               '2026年現在、主要プラットフォームをカバー',
               style: theme.body,

@@ -13,12 +13,6 @@ class CounterDemo extends StatefulWidget {
 class _CounterDemoState extends State<CounterDemo> {
   int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +20,11 @@ class _CounterDemoState extends State<CounterDemo> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           spacing: 32.0,
-          children: <Widget>[
+          children: [
+            Text(
+              'カウント',
+              style: Theme.of(context).textTheme.displayLarge,
+            ),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.displayLarge,
@@ -35,7 +33,11 @@ class _CounterDemoState extends State<CounterDemo> {
         ),
       ),
       floatingActionButton: FloatingActionButton.large(
-        onPressed: _incrementCounter,
+        onPressed: () {
+          setState(() {
+            _counter++;
+          });
+        },
         child: const Icon(Icons.add),
       ),
     );
