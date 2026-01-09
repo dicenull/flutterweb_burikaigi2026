@@ -34,9 +34,6 @@ jobs:
       - name: Build Flutter web
         run: flutter build web --wasm --base-href / 
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
