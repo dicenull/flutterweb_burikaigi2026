@@ -12,7 +12,26 @@ class TitleMainSlide extends FlutterDeckSlideWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.slideTextTheme;
+
     return FlutterDeckSlide.blank(
+      footerBuilder: (context) {
+        return Padding(
+          padding: EdgeInsets.all(32),
+          child: Column(
+            spacing: 32,
+            children: [
+              Text(
+                'burikaigi 2026',
+                style: theme.body,
+              ),
+              Text(
+                'ダイス @dicenull',
+                style: theme.body,
+              ),
+            ],
+          ),
+        );
+      },
       builder: (context) => Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
